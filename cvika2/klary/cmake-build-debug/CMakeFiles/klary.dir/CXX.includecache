@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/users/p/phamducm/CLionProjects/2cvika/klary/Member.cpp
+iostream
+-
+Member.h
+/home/users/p/phamducm/CLionProjects/2cvika/klary/Member.h
+clan.h
+/home/users/p/phamducm/CLionProjects/2cvika/klary/clan.h
+
+/home/users/p/phamducm/CLionProjects/2cvika/klary/Member.h
+iostream
+-
+
+/home/users/p/phamducm/CLionProjects/2cvika/klary/clan.h
+iostream
+-
+Member.h
+/home/users/p/phamducm/CLionProjects/2cvika/klary/Member.h
+
