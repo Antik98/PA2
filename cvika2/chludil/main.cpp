@@ -11,22 +11,55 @@ int main (){
     Complex A(0);
     Complex B(1.5, 2.78);
     Complex C(1);
+    Complex temp(0);
+
+    cout<<"A = ";
+    A.print();
+    cout<< "B = ";
     B.print();
+    cout<< "C = ";
     C.print();
     cout<<endl;
+
     cout<<"Scitani"<< endl;
-    A.add(B,C);
-    A.print();
+    temp.add(B,C);
+    temp.print();
+    temp.clear();
+
     cout<<endl;
     cout<<"Odcitani"<<endl;
-    A.sub(B,C);
-    A.print();
+    temp.sub(B,C);
+    temp.print();
+    temp.clear();
+
     cout<<endl;
     cout<<"Nasobeni"<<endl;
-    A.nasobeni(B,C);
-    A.print();
+    temp.nasobeni(B,C);
+    temp.print();
+    temp.clear();
+
     cout<<endl;
     cout<<"Deleni"<<endl;
-    A.deleni(B,C);
-    A.print();
+    temp.deleni(B,C);
+    temp.print();
+    temp.clear();
+
+    cout<< endl;
+    cout<< "Negace cisla B"<< endl;
+    temp.negace(B);
+    temp.print();
+    temp.clear();
+
+    cout<<endl;
+    cout<<"Operace C+=B"<<endl;
+    C.copy(&C,&temp);
+    C.pluseq(B);
+    C.print();
+    C.copy(&temp,&C);
+    temp.clear();
+
+    cout<<endl;
+    cout<<"Operace C-=B"<<endl;
+    C.minuseq(B);
+    C.print();
 }

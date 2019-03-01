@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/users/p/phamducm/PA2/cvika2/chludil/complex.h
+/Users/David/Documents/PA2/GitPA2/cvika2/chludil/complex.h
 iostream
 -
 
-/home/users/p/phamducm/PA2/cvika2/chludil/main.cpp
+/Users/David/Documents/PA2/GitPA2/cvika2/chludil/main.cpp
 iostream
 -
 complex.h
-/home/users/p/phamducm/PA2/cvika2/chludil/complex.h
+/Users/David/Documents/PA2/GitPA2/cvika2/chludil/complex.h
 
