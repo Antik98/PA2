@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/users/p/phamducm/PA2/cvika2/chludil/complex.h
+iostream
+-
+
+/home/users/p/phamducm/PA2/cvika2/chludil/main.cpp
+iostream
+-
+complex.h
+/home/users/p/phamducm/PA2/cvika2/chludil/complex.h
+

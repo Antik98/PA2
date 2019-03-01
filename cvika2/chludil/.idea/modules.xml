@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Chludil.iml" filepath="$PROJECT_DIR$/.idea/Chludil.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/chludil.iml" filepath="$PROJECT_DIR$/.idea/chludil.iml" />
     </modules>
   </component>
 </project>

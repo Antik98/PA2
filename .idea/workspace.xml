@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dff971ff-55f3-4e49-8855-ce5186555448" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cvika2/Chludil/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/Chludil/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,10 +22,11 @@
     <session id="464923063">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -41,21 +42,21 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="158" />
+          <entry key="cpp" value="159" />
           <entry key="h" value="99" />
           <entry key="txt" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="257" />
+          <entry key="ObjectiveC" value="258" />
           <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cvika2/Chludil/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
@@ -69,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/cvika2/Chludil/complex.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+              <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -120,7 +121,18 @@
               <item name="PA2" type="b2602c69:ProjectViewProjectNode" />
               <item name="PA2" type="462c0819:PsiDirectoryNode" />
               <item name="cvika2" type="462c0819:PsiDirectoryNode" />
+              <item name="benhauer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PA2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PA2" type="462c0819:PsiDirectoryNode" />
+              <item name="cvika2" type="462c0819:PsiDirectoryNode" />
               <item name="Chludil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PA2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PA2" type="462c0819:PsiDirectoryNode" />
+              <item name="progtest1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -156,7 +168,8 @@
       <option name="presentableId" value="Default" />
       <updated>1551440672544</updated>
       <workItem from="1551440673644" duration="130000" />
-      <workItem from="1551440879259" duration="1184000" />
+      <workItem from="1551440879259" duration="1473000" />
+      <workItem from="1551442405500" duration="172000" />
     </task>
     <task id="LOCAL-00001" summary="Initial push">
       <created>1551440997992</created>
@@ -169,13 +182,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1314000" />
+    <option name="totallyTimeSpent" value="1775000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="0" width="1280" height="1412" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25487012" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25974026" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -206,17 +219,17 @@
     <option name="LAST_COMMIT_MESSAGE" value="Initial push" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cvika2/Chludil/complex.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cvika2/Chludil/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cvika2/Chludil/complex.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
         </state>
       </provider>
     </entry>
