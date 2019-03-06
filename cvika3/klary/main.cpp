@@ -1,6 +1,8 @@
 #include <iostream>
-
+using namespace std;
+#include "lodePole.h"
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    lodePole Pole(10,10);
+    Pole.printPole();
+
 }

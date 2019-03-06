@@ -1,0 +1,12 @@
+all: compile run
+
+compile:
+    g++ -Wall -pednatic -g pint.cpp rectangle. cpp main.cpp -o example
+run: compile 
+    ./example
+memory: compile
+    valgrind ./example
+clean: 
+    rm -f example
+hi:
+    echo "Hi hooman"
