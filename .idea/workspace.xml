@@ -12,41 +12,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dff971ff-55f3-4e49-8855-ce5186555448" name="Default Changelist" comment="Initial push">
-      <change beforePath="$PROJECT_DIR$/.idea/PA2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PA2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.1/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.1/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.1/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.1/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.1/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/a.out" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/CXX.includecache" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/chludil.dir/main.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/chludil" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/chludil" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/chludil.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/chludil.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvika2/chludil/complex.h" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/complex.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cvika2/chludil/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cvika2/chludil/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cvika2/chludil/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,11 +56,12 @@
     <session id="464923063">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -80,6 +77,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="c" value="1" />
           <entry key="cpp" value="159" />
           <entry key="h" value="99" />
           <entry key="txt" value="12" />
@@ -87,7 +85,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="258" />
+          <entry key="ObjectiveC" value="259" />
           <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
@@ -117,7 +115,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cvika2/chludil/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
+            <state relative-caret-position="1026">
               <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
             </state>
           </provider>
@@ -126,8 +124,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cvika2/chludil/complex.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="72" column="1" lean-forward="true" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
+            <state relative-caret-position="1110">
+              <caret line="72" column="1" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -144,6 +142,7 @@
         <option value="$PROJECT_DIR$/cvika2/Chludil/main.cpp" />
         <option value="$PROJECT_DIR$/cvika2/chludil/main.cpp" />
         <option value="$PROJECT_DIR$/cvika2/chludil/complex.h" />
+        <option value="$PROJECT_DIR$/cvika3/chludil/main.c" />
       </list>
     </option>
   </component>
@@ -163,7 +162,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,6 +173,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -225,6 +224,8 @@
       <workItem from="1551440879259" duration="1473000" />
       <workItem from="1551442405500" duration="172000" />
       <workItem from="1551448403261" duration="2298000" />
+      <workItem from="1552033691468" duration="45000" />
+      <workItem from="1552033768646" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="Initial push">
       <created>1551440997992</created>
@@ -237,17 +238,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4073000" />
+    <option name="totallyTimeSpent" value="4143000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="777" extended-state="6" />
+    <frame x="0" y="0" width="2560" height="1412" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2641357" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2687102" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.329927" />
-      <window_info anchor="bottom" id="CMake" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329927" />
@@ -259,6 +258,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.329927" />
+      <window_info anchor="bottom" id="CMake" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -289,15 +290,18 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/cvika2/chludil/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
+        <state relative-caret-position="1026">
           <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cvika3/chludil/main.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/cvika2/chludil/complex.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="72" column="1" lean-forward="true" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
+        <state relative-caret-position="1110">
+          <caret line="72" column="1" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
         </state>
       </provider>
     </entry>
