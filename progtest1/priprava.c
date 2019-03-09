@@ -1,1 +1,0 @@
-Zmena prvni
