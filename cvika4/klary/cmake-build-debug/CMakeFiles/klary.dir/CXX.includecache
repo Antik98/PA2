@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/users/p/phamducm/PA2/cvika4/klary/card.hpp
+string
+-
+
+/home/users/p/phamducm/PA2/cvika4/klary/deck.hpp
+card.hpp
+/home/users/p/phamducm/PA2/cvika4/klary/card.hpp
+
+/home/users/p/phamducm/PA2/cvika4/klary/main.cpp
+iostream
+-
+fstream
+-
+card.hpp
+/home/users/p/phamducm/PA2/cvika4/klary/card.hpp
+deck.hpp
+/home/users/p/phamducm/PA2/cvika4/klary/deck.hpp
+
