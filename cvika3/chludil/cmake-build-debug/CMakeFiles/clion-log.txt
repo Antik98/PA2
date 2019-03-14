@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /usr/local/jetbrains/clion-2018.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/users/p/phamducm/PA2/cvika3/chludil
 CMake Warning (dev) at CMakeLists.txt:6:
   Syntax Warning in cmake code at column 34
@@ -19,3 +20,35 @@ CMake Error at CMakeLists.txt:6 (add_executable):
 
 -- Configuring incomplete, errors occurred!
 See also "/home/users/p/phamducm/PA2/cvika3/chludil/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+=======
+/home/users/p/phamducm/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/users/p/phamducm/PA2/cvika3/chludil
+-- The C compiler identification is GNU 7.3.1
+-- The CXX compiler identification is GNU 7.3.1
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+CMake Error at CMakeLists.txt:6 (add_executable):
+  Cannot find source file:
+
+    main.cpp,
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at CMakeLists.txt:6 (add_executable):
+  No SOURCES given to target: chludil
+
+
+-- Build files have been written to: /home/users/p/phamducm/PA2/cvika3/chludil/cmake-build-debug
+>>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7

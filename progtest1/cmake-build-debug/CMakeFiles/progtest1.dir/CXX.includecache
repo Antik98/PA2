@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
@@ -50,3 +51,57 @@ functional
 memory
 -
 
+=======
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/CVUT FIT/PA2/progtest1/test.cpp
+cstdio
+-
+cstdlib
+-
+cstdint
+-
+cstring
+-
+cassert
+-
+cmath
+-
+cctype
+-
+climits
+-
+iostream
+-
+iomanip
+-
+fstream
+-
+sstream
+-
+vector
+-
+map
+-
+set
+-
+unordered_map
+-
+unordered_set
+-
+list
+-
+algorithm
+-
+functional
+-
+memory
+-
+
+>>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7

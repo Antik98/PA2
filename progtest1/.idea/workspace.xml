@@ -11,6 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="8666acae-578b-4c0c-a3af-d3f802f24355" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
@@ -227,6 +228,9 @@
       <change beforePath="$PROJECT_DIR$/../cvika3/klary/priklad tabule/rectangle.h" beforeDir="false" afterPath="$PROJECT_DIR$/../cvika3/klary/priklad tabule/rectangle.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/priprava.c" beforeDir="false" />
     </list>
+=======
+    <list default="true" id="8666acae-578b-4c0c-a3af-d3f802f24355" name="Default Changelist" comment="" />
+>>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -240,7 +244,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="75">
+=======
+            <state relative-caret-position="95">
+>>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
               <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
@@ -249,15 +257,43 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.cpp">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="89">
               <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
               <folding>
                 <element signature="e#22#39#0" expanded="true" />
+=======
+            <state relative-caret-position="361">
+              <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+              <folding>
+                <element signature="e#21#38#0" expanded="true" />
+>>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_iterator.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="845" selection-start-line="845" selection-end-line="845" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_vector.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="579">
+              <caret line="716" selection-start-line="716" selection-end-line="716" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -271,10 +307,17 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
+=======
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1713" />
+    <option name="width" value="1734" />
+    <option name="height" value="1407" />
+>>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -301,7 +344,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+=======
+    <property name="settings.editor.selected.configurable" value="Errors" />
+>>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -335,6 +382,7 @@
       <workItem from="1552139048008" duration="12000" />
       <workItem from="1552139078415" duration="68000" />
       <workItem from="1552139147756" duration="8915000" />
+<<<<<<< HEAD
       <workItem from="1552298900485" duration="800000" />
       <workItem from="1552299922699" duration="1233000" />
       <workItem from="1552337035276" duration="45000" />
@@ -342,11 +390,17 @@
       <workItem from="1552397170428" duration="1111000" />
       <workItem from="1552413637426" duration="279000" />
       <workItem from="1552583069185" duration="2886000" />
+=======
+>>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="16558000" />
+=======
+    <option name="totallyTimeSpent" value="8995000" />
+>>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -358,25 +412,45 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16720517" />
+=======
+    <frame x="1713" y="0" width="1734" height="1407" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15053764" />
+>>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" x="754" y="257" width="526" height="604" id="Run" order="2" sideWeight="0.49940264" type="FLOATING" visible="true" weight="0.39423078" />
+=======
+      <window_info anchor="bottom" x="792" y="388" width="900" height="778" id="Run" order="2" sideWeight="0.49940264" type="FLOATING" weight="0.39423078" />
+>>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39903846" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32932693" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32846716" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50059736" side_tool="true" weight="0.19150642" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.14452554" />
       <window_info anchor="bottom" id="Messages" order="12" visible="true" weight="0.17429838" />
+=======
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32932693" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50059736" side_tool="true" weight="0.19150642" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="CMake" order="11" weight="0.3293556" />
+      <window_info anchor="bottom" id="Messages" order="12" visible="true" weight="0.32932693" />
+>>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -386,6 +460,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+<<<<<<< HEAD
   <component name="editorHistoryManager">
     <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/ios_base.h" />
     <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_vector.h" />
@@ -393,16 +468,63 @@
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
+=======
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/test.cpp</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+>>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
           <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/test.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
           <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
           <folding>
             <element signature="e#22#39#0" expanded="true" />
+=======
+    <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/ios_base.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="1021" selection-start-line="1021" selection-end-line="1021" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="716" selection-start-line="716" selection-end-line="716" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_iterator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="845" selection-start-line="845" selection-end-line="845" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+          <folding>
+            <element signature="e#21#38#0" expanded="true" />
+>>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
           </folding>
         </state>
       </provider>

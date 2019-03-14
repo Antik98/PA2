@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/klary.dir/main.cpp.o  -o klary 
