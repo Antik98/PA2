@@ -39,15 +39,12 @@ bool flipImage(const char *srcFileName,
 }
 
 #ifndef __PROGTEST__
-<<<<<<< HEAD
 class CPixel{
     int kanalu;
     int pocetBitu;
 
 };
-=======
 
->>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
 bool identicalFiles(const char *fileName1,
                     const char *fileName2) {
     // DIY
@@ -78,17 +75,14 @@ void printfile(string fileName){
         in.seekg(0, ios::beg);
 
         //create a vecotr to hold the data that is resized to the total size of the file
-<<<<<<< HEAD
         vector<char> contents(end-start);
         //contents.resize(static_cast<size_t>(end - start));
        /* for(int i = 0; i < size; ++i) {
             in.read(&contents[i].byte[y], 1);
         }*/
-=======
         vector<char> contents;
         contents.resize(static_cast<size_t>(end - start));
 
->>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
         //read it in
         in.read(&contents[0], contents.size());
         int l=0;
@@ -103,7 +97,6 @@ void printfile(string fileName){
 
 
             for(const char& c: contents){
-<<<<<<< HEAD
                 if(tmp ==6 || tmp == 7){
                     printbinchar(c);
                     cout << endl;
@@ -111,8 +104,7 @@ void printfile(string fileName){
                     l++;
                     continue;
                 }
-=======
->>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
+
                 if (tmp == 8){
                     cout<< "konec hlavicky" << endl << endl;
                     l=0;
