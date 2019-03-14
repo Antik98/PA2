@@ -1,0 +1,21 @@
+/usr/local/jetbrains/clion-2018.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/users/p/phamducm/PA2/cvika3/chludil
+CMake Warning (dev) at CMakeLists.txt:6:
+  Syntax Warning in cmake code at column 34
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at CMakeLists.txt:6:
+  Syntax Warning in cmake code at column 57
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Error at CMakeLists.txt:6 (add_executable):
+  The target name "chludil main.cpp" is reserved or not valid for certain
+  CMake features, such as generator expressions, and may result in undefined
+  behavior.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/users/p/phamducm/PA2/cvika3/chludil/cmake-build-debug/CMakeFiles/CMakeOutput.log".

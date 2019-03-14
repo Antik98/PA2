@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/chludil.dir/main.cpp.o"
+  "CMakeFiles/chludil.dir/main.cpp.obj"
   "chludil.pdb"
-  "chludil"
+  "chludil.exe"
+  "chludil.exe.manifest"
+  "libchludil.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
