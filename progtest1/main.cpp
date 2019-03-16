@@ -43,8 +43,6 @@ public:
 CImage::CImage()
         :vyska(0),
          sirka(0),
-         kanal(0),
-         bPerKanal(0),
          endian(littleEndian){
     for (int i = 0; i < 8 ; i++)
         hlavicka[i]=0;
@@ -154,6 +152,8 @@ bool readFile(CImage &imgFile, const char* fileName){
             cout<< "Nasel se bit prevysujici pole"<< endl;
             return false;
         }
+    }else{
+        return false;
     }
     in.close();
     return true;
