@@ -90,6 +90,12 @@ bool printfile(CImage imgFile, string fileName){
         cout << "Sirka : " << imgFile.sirka << endl;
         cout << "Delka: " << imgFile.delka<< endl;
 
+        //check if Size image == size specified
+        if(imgFile.sirka*imgFile.delka!= (end - start)-8){
+            cout<< "Error: image je vetsi/mensi nez v hlavicce"<< endl;
+            return false;
+        }
+
         imgFile.kanal=hlavicka[3] & 0b11;
         imgFile.bPerKanal=(hlavicka[3] & 0b11100)>>2;
         if(hlavicka[3]&0b1111111111100000){
@@ -133,14 +139,6 @@ bool printfile(CImage imgFile, string fileName){
         in.read(&contents[0], contents.size());
 
         for(const char& c: contents){
-            /*if (tmp == 8){
-                cout<< "konec hlavicky" << endl << endl;
-                l=0;
-            }*/
-            /*if(tmp<=8) {
-                tmp++;
-                continue;
-            }*/
             //printbinchar(c);
             cout<<setw(2) << setfill('0') << hex<<(int)c;
             l++;
@@ -164,7 +162,11 @@ bool flipImage(const char *srcFileName,
                bool flipHorizontal,
                bool flipVertical) {
     CImage imgFile;
-    printfile(imgFile, srcFileName);
+
+    if(!printfile(imgFile, srcFileName)){
+        return false;
+    }
+
     return true;
 }
 

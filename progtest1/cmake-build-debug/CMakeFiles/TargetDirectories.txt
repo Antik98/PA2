@@ -1,3 +1,3 @@
-/Users/David/Documents/PA2/prog1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/David/Documents/PA2/prog1/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/David/Documents/PA2/prog1/cmake-build-debug/CMakeFiles/prog1.dir
+C:/CVUT FIT/PA2/progtest1/cmake-build-debug/CMakeFiles/prog1.dir
+C:/CVUT FIT/PA2/progtest1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/CVUT FIT/PA2/progtest1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
