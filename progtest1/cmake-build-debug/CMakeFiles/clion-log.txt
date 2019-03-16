@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-"/Users/David/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/David/Documents/PA2/GitPA2/progtest1
+"/Users/David/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/David/Documents/PA2/prog1
 -- The C compiler identification is AppleClang 10.0.0.10001044
 -- The CXX compiler identification is AppleClang 10.0.0.10001044
 -- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc
@@ -16,10 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/David/Documents/PA2/GitPA2/progtest1/cmake-build-debug
-=======
-"C:\Program Files\JetBrains\CLion 2018.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\CVUT FIT\PA2\progtest1"
--- Configuring done
--- Generating done
--- Build files have been written to: C:/CVUT FIT/PA2/progtest1/cmake-build-debug
->>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
+-- Build files have been written to: /Users/David/Documents/PA2/prog1/cmake-build-debug
