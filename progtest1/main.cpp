@@ -88,20 +88,22 @@ bool readFile(CImage &imgFile, const char* fileName){
             imgFile.sirka=imgFile.hlavicka[1];
             imgFile.vyska=imgFile.hlavicka[2];
         }else{
-            imgFile.hlavicka[1]=(imgFile.hlavicka[1] & 0xFF00)>>8;
-            imgFile.hlavicka[2]=(imgFile.hlavicka[2] & 0xFF00)>>8;
-            imgFile.hlavicka[3]=(imgFile.hlavicka[3] & 0xFF00)>>8;
-            imgFile.sirka=imgFile.hlavicka[1];
-            imgFile.vyska=imgFile.hlavicka[2];
+            imgFile.sirka=(imgFile.hlavicka[1] & 0xFF00)>>8;
+            imgFile.vyska=(imgFile.hlavicka[2] & 0xFF00)>>8;
         }
         cout << "Size of image :" << dec << imgFile.sirka*imgFile.vyska << endl;
         cout << "Sirka : " << imgFile.sirka << endl;
         cout << "Vyska: " << imgFile.vyska<< endl;
+        uint16_t tmp;
+        if(imgFile.endian==CImage::littleEndian){
+            tmp = imgFile.hlavicka[3];
+        }else{
+            tmp = (imgFile.hlavicka[3] & 0xFF00)>>8;
+        }
 
-
-        imgFile.kanal=imgFile.hlavicka[3] & 0b11;
-        imgFile.bPerKanal=(imgFile.hlavicka[3] & 0b11100)>>2;
-        if(imgFile.hlavicka[3]&0b1111111111100000){
+        imgFile.kanal=tmp & 0b11;
+        imgFile.bPerKanal=(tmp & 0b11100)>>2;
+        if(tmp &0b1111111111100000){
             cout<< "spatna imgFile.hlavicka";
             return false;
         }
