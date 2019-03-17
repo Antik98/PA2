@@ -44,7 +44,7 @@ CImage::CImage()
         :vyska(0),
          sirka(0),
          endian(littleEndian){
-    for (int i = 0; i < 8 ; i++)
+    for (int i = 0; i < 4 ; i++)
         hlavicka[i]=0;
 }
 void printImg(const CImage imgFile){
@@ -64,7 +64,7 @@ void printImg(const CImage imgFile){
 bool readFile(CImage &imgFile, const char* fileName){
     ifstream in;
     in.open(fileName,ios::binary);
-    if(in.fail()){
+    if(in.fail() || !fileName){
         return false;
     }
 
@@ -88,9 +88,11 @@ bool readFile(CImage &imgFile, const char* fileName){
             imgFile.sirka=imgFile.hlavicka[1];
             imgFile.vyska=imgFile.hlavicka[2];
         }else{
-            imgFile.sirka=(imgFile.hlavicka[1]&0xFF00)>>8;
-            imgFile.vyska=(imgFile.hlavicka[2]&0xFF00)>>8;
+            imgFile.hlavicka[1]=(imgFile.hlavicka[1] & 0xFF00)>>8;
+            imgFile.hlavicka[2]=(imgFile.hlavicka[2] & 0xFF00)>>8;
             imgFile.hlavicka[3]=(imgFile.hlavicka[3] & 0xFF00)>>8;
+            imgFile.sirka=imgFile.hlavicka[1];
+            imgFile.vyska=imgFile.hlavicka[2];
         }
         cout << "Size of image :" << dec << imgFile.sirka*imgFile.vyska << endl;
         cout << "Sirka : " << imgFile.sirka << endl;
@@ -218,7 +220,7 @@ bool flipV(CImage *imgFile){
 bool saveFile(CImage *imgFile, const char *dstFileName){
     ofstream outFile;
     outFile.open(dstFileName, ios::binary|ios::out);
-    if(!outFile.good()) // possible not able to create file
+    if(!outFile.good() || !dstFileName) // possible not able to create file
         return false;
 
     for(int i =0 ; i< 4;i++) {
