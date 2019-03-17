@@ -242,6 +242,9 @@ bool flipImage(const char *srcFileName,
                bool flipHorizontal,
                bool flipVertical) {
     CImage imgFile;
+    if(!srcFileName || !dstFileName){
+        return false;
+    }
 
     if(!readFile(imgFile, srcFileName)){
         return false;
@@ -254,8 +257,10 @@ bool flipImage(const char *srcFileName,
         if(!flipH(&imgFile)) return false;
         if(!flipV(&imgFile)) return false;
     }
-
-    return (saveFile(&imgFile,dstFileName));
+    if(!saveFile(&imgFile,dstFileName)){
+        return false;
+    }
+    return true;
 }
 
 #ifndef __PROGTEST__
@@ -264,8 +269,12 @@ bool identicalFiles(const char *fileName1,
                     const char *fileName2) {
     CImage input1;
     CImage input2;
-    readFile(input1, fileName1);
-    readFile(input2, fileName2);
+    if(!readFile(input1, fileName1)){
+        return false;
+    }
+    if(!readFile(input2, fileName2)){
+        return false;
+    }
     if ((input1.sirka!=input2.sirka)||(input1.vyska!=input2.vyska)){
         return false;
     }
