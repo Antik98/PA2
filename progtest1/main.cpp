@@ -222,7 +222,7 @@ bool flipV(CImage *imgFile){
 bool saveFile(CImage *imgFile, const char *dstFileName){
     ofstream outFile;
     outFile.open(dstFileName, ios::binary|ios::out);
-    if(!outFile.good() || !dstFileName) // possible not able to create file
+    if(!outFile.good() || !dstFileName || !outFile) // possible not able to create file
         return false;
 
     for(int i =0 ; i< 4;i++) {
