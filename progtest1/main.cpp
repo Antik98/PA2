@@ -234,6 +234,9 @@ bool saveFile(CImage *imgFile, const char *dstFileName){
         }
     }
     outFile.close();
+    if(!outFile.good()){
+        return false;
+    }
     return true;
 }
 
