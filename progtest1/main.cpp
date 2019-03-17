@@ -38,7 +38,7 @@ public:
     int kanal;
     int bPerKanal;
     vector<vector<uint64_t>> pole;
-    uint16_t hlavicka[8];
+    uint16_t hlavicka[4];
 };
 CImage::CImage()
         :vyska(0),
@@ -64,6 +64,9 @@ void printImg(const CImage imgFile){
 bool readFile(CImage &imgFile, const char* fileName){
     ifstream in;
     in.open(fileName,ios::binary);
+    if(in.fail()){
+        return false;
+    }
 
     if (in.is_open()){
 
@@ -85,8 +88,9 @@ bool readFile(CImage &imgFile, const char* fileName){
             imgFile.sirka=imgFile.hlavicka[1];
             imgFile.vyska=imgFile.hlavicka[2];
         }else{
-            imgFile.sirka=imgFile.hlavicka[1]<<8;
-            imgFile.vyska=imgFile.hlavicka[2]<<8;
+            imgFile.sirka=(imgFile.hlavicka[1]&0xFF00)>>8;
+            imgFile.vyska=(imgFile.hlavicka[2]&0xFF00)>>8;
+            imgFile.hlavicka[3]=(imgFile.hlavicka[3] & 0xFF00)>>8;
         }
         cout << "Size of image :" << dec << imgFile.sirka*imgFile.vyska << endl;
         cout << "Sirka : " << imgFile.sirka << endl;
@@ -146,6 +150,7 @@ bool readFile(CImage &imgFile, const char* fileName){
                 }
             }
         }
+        printImg(imgFile);
 
         uint64_t tmpPixel; // checking for bytes of full read, potential error
         if(in.read((char*)&tmpPixel,1)){
@@ -169,7 +174,9 @@ bool flipH(CImage *imgFile){
         cout << "Error vyskaflip blbe" << endl;// potential error, perhaps img could be very small
         return false;
     }
-
+    if(imgFile->vyska==0){
+        return true;
+    }
     for (int y = 0; y <imgFile->vyska; y++) {
         for (int x = 0; x < imgFile->sirka/2; x++) {
             uint64_t temp = imgFile->pole[y][x];
@@ -196,7 +203,9 @@ bool flipV(CImage *imgFile){
         cout << "Error vyskaflip blbe" << endl;// potential error, perhaps img could be very small
         return false;
     }
-
+    if(imgFile->sirka==0){
+        return true;
+    }
     for (int y = 0; y < imgFile->vyska/2; y++) {
         for (int x = 0; x < imgFile->sirka; x++) {
             uint64_t temp = imgFile->pole[y][x];
@@ -209,7 +218,7 @@ bool flipV(CImage *imgFile){
 bool saveFile(CImage *imgFile, const char *dstFileName){
     ofstream outFile;
     outFile.open(dstFileName, ios::binary|ios::out);
-    if(outFile.fail()) // possible not able to create file
+    if(!outFile.good()) // possible not able to create file
         return false;
 
     for(int i =0 ; i< 4;i++) {
@@ -289,7 +298,6 @@ int main(void) {
     assert ( flipImage ( "input_08.img", "output_08.img", true, true )
              && identicalFiles ( "output_08.img", "ref_08.img" ) );
     assert ( ! flipImage ( "input_09.img", "output_09.img", true, false ) );
-
 
     /*// extra inputs (optional & bonus tests)
     assert ( flipImage ( "extra_input_00.img", "extra_out_00.img", true, false )
