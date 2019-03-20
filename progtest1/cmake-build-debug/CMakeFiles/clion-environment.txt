@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-ToolSet: 1.0 (local)Options: 
-=======
 ToolSet: w64 6.0 (local)@C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64
 Options: 
->>>>>>> 539200e07c56440f1adef062f86060ee3ea0f4d7
 
 Options:
