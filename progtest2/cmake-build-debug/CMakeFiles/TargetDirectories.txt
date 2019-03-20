@@ -1,0 +1,3 @@
+/home/phammd/cvut/PA2/progtest2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/phammd/cvut/PA2/progtest2/cmake-build-debug/CMakeFiles/progtest2.dir
+/home/phammd/cvut/PA2/progtest2/cmake-build-debug/CMakeFiles/edit_cache.dir
