@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/progtest2.dir/main.cpp.o  -o progtest2 
+/Library/Developer/CommandLineTools/usr/bin/c++  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/progtest2.dir/main.cpp.o  -o progtest2 

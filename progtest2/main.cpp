@@ -18,33 +18,68 @@
 using namespace std;
 #endif /* __PROGTEST__ */
 
+class CPozemek{
+
+public:
+    string mesto;
+    string ulice;
+    string region;
+    unsigned int id;
+    string majitel;
+    CPozemek operator=(CPozemek &other);
+};
+CPozemek CPozemek::operator=(CPozemek &other) {
+    mesto=other.mesto;
+    ulice=other.ulice;
+    region=other.region;
+    id=other.id;
+    majitel=other.majitel;
+}
+
+void clearPozemek(CPozemek *pozemek){
+    pozemek->mesto.clear();
+    pozemek->ulice.clear();
+    pozemek->region.clear();
+    pozemek->id=0;
+    pozemek->majitel.clear();
+}
+
 class CIterator {
 public:
-    bool AtEnd(void) const;
-
-    void Next(void);
-
-    string City(void) const;
-
-    string Addr(void) const;
-
-    string Region(void) const;
-
-    unsigned ID(void) const;
-
-    string Owner(void) const;
-
+    bool AtEnd(void) const{
+        return (curIdx==endIdx);
+    }
+    void Next(void){
+        curIdx++;
+    }
+    string City(void) const{
+        return seznam[curIdx].mesto;
+    }
+    string Addr(void) const{
+        return seznam[curIdx].ulice;
+    }
+    string Region(void) const{
+        return seznam[curIdx].region;
+    }
+    unsigned ID(void) const{
+        return seznam[curIdx].id;
+    }
+    string Owner(void) const{
+        return seznam[curIdx].majitel;
+    }
+    vector<CPozemek*> seznam;
 private:
-    // todo
+    int curIdx;
+    int endIdx;
 };
-class CPozemek{
-    
-};
+
 
 class CLandRegister {
 public:
-    CLandRegister() {
-        pole = vector<CIterator>;
+    CLandRegister()
+        :maxNumPozemek(1000),
+        lastIdxPozemek(0){
+        pole.resize(maxNumPozemek);
     }
 
     bool Add(const string &city,
@@ -80,11 +115,152 @@ public:
 
     CIterator ListByOwner(const string &owner) const;
 
-    CIterator *pole;
+    vector<CPozemek> pole;
+
+    bool checkDupe(const string &city,
+                   const string &addr,
+                   const string &region,
+                   unsigned int id) const;
 private:
+    bool zeroIdxFilled;
+    unsigned long lastIdxPozemek;
+    unsigned long maxNumPozemek;
 };
+bool CLandRegister::checkDupe(const string &city, const string &addr, const string &region, unsigned int id) const {
+    for (int i = 0 ; i<=lastIdxPozemek; i++){
+        if(pole[i].mesto==city && pole[i].ulice ==addr){
+            return true;
+        }
+        if(pole[i].region==region && pole[i].id ==id){
+            return true;
+        }
+    }
+    return false;
+}
+bool CLandRegister::Add(const string &city, const string &addr, const string &region, unsigned int id) {
+    if(lastIdxPozemek+2>=maxNumPozemek){
+        maxNumPozemek *=2;
+        pole.resize(maxNumPozemek);
+    }
+    if(lastIdxPozemek>=1){ // check for dupes before insert
+        if(checkDupe(city,addr,region,id)){         //TODO
+            return false;
+        }
+    }
+    if(!zeroIdxFilled){
+        lastIdxPozemek++;
+        zeroIdxFilled=true;
+    }
+    pole[lastIdxPozemek].mesto=city;
+    pole[lastIdxPozemek].ulice=addr;
+    pole[lastIdxPozemek].region=region;
+    pole[lastIdxPozemek].id=id;
+    return true;
+}
+bool CLandRegister::Del(const string &region, unsigned int id) {
+    for(int i=0 ; i<=lastIdxPozemek ; i++){
+        if(pole[i].region == region && pole[i].id==id){
+            // checknem jestli tam je aspon jedno / vic nez jedno
+            if(lastIdxPozemek==0 && !zeroIdxFilled){
+                return false;
+            }else if(lastIdxPozemek==0 && zeroIdxFilled){
+                clearPozemek(&pole[i]);
+                zeroIdxFilled=false;
+                return true;
+            }else if(lastIdxPozemek==i){
+                clearPozemek(&pole[i]);
+                lastIdxPozemek--;
+                return true;
+            }else{
+                clearPozemek(&pole[i]);
+                pole[i]=pole[lastIdxPozemek];
+                return true;
+            }
 
+        }
+    }
+    return false;
+}
+bool CLandRegister::Del(const string &city,const string &addr) {
+    for(int i=0 ; i<=lastIdxPozemek ; i++){
+        if(pole[i].mesto == city && pole[i].ulice==addr){
+            // checknem jestli tam je aspon jedno / vic nez jedno
+            if(lastIdxPozemek==0 && !zeroIdxFilled){
+                return false;
+            }else if(lastIdxPozemek==0 && zeroIdxFilled){
+                clearPozemek(&pole[i]);
+                zeroIdxFilled=false;
+                return true;
+            }else if(lastIdxPozemek==i){
+                clearPozemek(&pole[i]);
+                lastIdxPozemek--;
+                return true;
+            }else{
+                clearPozemek(&pole[i]);
+                pole[i]=pole[lastIdxPozemek];
+                return true;
+            }
 
+        }
+    }
+    return false;
+}
+
+bool CLandRegister::GetOwner(const string &city, const string &addr, string &owner) const {
+    for(int i=0 ; i<=lastIdxPozemek ; i++){
+        if(pole[i].mesto == city && pole[i].ulice == addr){
+            owner = pole[i].majitel;
+            return true;
+        }
+    }
+    return false;
+}
+
+bool CLandRegister::GetOwner(const string &region, unsigned int id, string &owner) const {
+    for(int i=0 ; i<=lastIdxPozemek ; i++){
+        if(pole[i].region == region && pole[i].id == id){
+            owner = pole[i].majitel;
+            return true;
+        }
+    }
+    return false;
+}
+
+bool CLandRegister::NewOwner(const string &region, unsigned int id, const string &owner) {
+    for(int i=0 ; i<=lastIdxPozemek ; i++){
+        if(pole[i].region == region && pole[i].id == id){
+            if(pole[i].majitel == owner){
+                return false;
+            }else{
+                pole[i].majitel = owner;
+            }
+        }
+    }
+    return false;
+}
+
+bool CLandRegister::NewOwner(const string &city, const string &addr, const string &owner) {
+    for(int i=0 ; i<=lastIdxPozemek ; i++){
+        if(pole[i].mesto == city && pole[i].ulice == addr){
+            if(pole[i].majitel == owner){
+                return false;
+            }else{
+                pole[i].majitel = owner;
+            }
+        }
+    }
+    return false;
+}
+
+unsigned CLandRegister::Count(const string &owner) const {
+    unsigned counter=0;
+    for(int i=0 ; i<=lastIdxPozemek ; i++){
+        if(pole[i].majitel == owner){
+            counter++;
+        }
+    }
+    return counter;
+}
 
 #ifndef __PROGTEST__
 
