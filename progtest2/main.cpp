@@ -18,74 +18,93 @@
 using namespace std;
 #endif /* __PROGTEST__ */
 
-class CPozemek{
+string tolower(string retezec){ // comparison of strings
+    string tmp;
+    for(int i=0; i<retezec.end()-retezec.begin() ; i++){
+        if(retezec[i]>='A' && retezec[i] <='Z'){
+            tmp.push_back(retezec[i]- ('Z'-'z'));
+        }else{
+            tmp.push_back(retezec[i]);
+        }
+    }
+    return tmp;
+}
+
+
+class CPozemek{ // should be used as the original template
 
 public:
+    CPozemek();
+    CPozemek(const string &mesto, const string &ulice, const string &region, unsigned int id);
+
     string mesto;
     string ulice;
     string region;
     unsigned int id;
-    string majitel;
     void operator=(const CPozemek&);
+    string majitel;
 };
 
-void CPozemek::operator=(const CPozemek &other) {
-    mesto=other.mesto;
-    ulice=other.ulice;
-    region=other.region;
-    id=other.id;
-    majitel=other.majitel;
-}
+CPozemek::CPozemek()
+        :id(0){}
 
-void clearPozemek(CPozemek *pozemek){
-    pozemek->mesto.clear();
-    pozemek->ulice.clear();
-    pozemek->region.clear();
-    pozemek->id=0;
-    pozemek->majitel.clear();
-}
+CPozemek::CPozemek(const string &mesto, const string &ulice, const string &region, unsigned int id)
+    : mesto(mesto),
+      ulice(ulice),
+      region(region),
+      id(id) {}
 
 class CIterator {
 public:
-    bool AtEnd(void) const{
-        return (curIdx==endIdx);
+    CIterator()
+            : curIdx(0),
+              endIdx(0) {}
+
+    bool AtEnd(void) const{ // checks if 0 is not empty
+        if(seznam.empty()){
+            return (curIdx==endIdx);
+        }
+        return (curIdx==endIdx+1);
     }
     void Next(void){
         curIdx++;
     }
     string City(void) const{
-        return seznam[curIdx].mesto;
+        return seznam[curIdx]->mesto;
     }
     string Addr(void) const{
-        return seznam[curIdx].ulice;
+        return seznam[curIdx]->ulice;
     }
     string Region(void) const{
-        return seznam[curIdx].region;
+        return seznam[curIdx]->region;
     }
     unsigned ID(void) const{
-        return seznam[curIdx].id;
+        return seznam[curIdx]->id;
     }
     string Owner(void) const{
-        return seznam[curIdx].majitel;
+        return seznam[curIdx]->majitel;
     }
-    vector<CPozemek> seznam;
 
-    int curIdx;
-    int endIdx;
+    vector<CPozemek*> seznam;
+
+    unsigned long curIdx;
+    unsigned long endIdx;
 private:
 
 };
 
-
 class CLandRegister {
 public:
     CLandRegister()
-        :maxNumPozemek(1000),
-        lastIdxPozemek(0),
-        zeroIdxFilled(0){
+            :maxNumPozemek(1000),
+             lastIdxPozemek(0),
+             zeroIdxFilled(0){
         pole.resize(maxNumPozemek);
+        orderPole.resize(maxNumPozemek);
     }
-
+    ~CLandRegister(){  // TODO
+        ownerPole.clear();
+    }
     bool Add(const string &city,
              const string &addr,
              const string &region,
@@ -119,7 +138,9 @@ public:
 
     CIterator ListByOwner(const string &owner) const;
 
-    vector<CPozemek> pole;
+    vector<CPozemek*> pole;
+    vector<vector<CPozemek*>> ownerPole;
+    vector<CPozemek*> orderPole;
 
     void operator=(const CLandRegister&);
 
@@ -134,111 +155,219 @@ private:
 };
 bool CLandRegister::checkDupe(const string &city, const string &addr, const string &region, unsigned int id) const {
     for (int i = 0 ; i<=lastIdxPozemek; i++){
-        if(pole[i].mesto==city && pole[i].ulice ==addr){
+        if(pole[i]->mesto==city && pole[i]->ulice ==addr){
             return true;
         }
-        if(pole[i].region==region && pole[i].id ==id){
+        if(pole[i]->region==region && pole[i]->id ==id){
             return true;
         }
     }
     return false;
 }
 bool CLandRegister::Add(const string &city, const string &addr, const string &region, unsigned int id) {
-    if(lastIdxPozemek+2>=maxNumPozemek){
-        maxNumPozemek *=2;
+    if(zeroIdxFilled && checkDupe(city, addr, region, id))
+        return false;
+
+    if (lastIdxPozemek+1 >= maxNumPozemek){ // check if vector overflowing
+        maxNumPozemek*=2;
         pole.resize(maxNumPozemek);
+        orderPole.resize(maxNumPozemek);
     }
-    if(lastIdxPozemek>=1){ // check for dupes before insert
-        if(checkDupe(city,addr,region,id)){         //TODO
-            return false;
+
+    if(!zeroIdxFilled){ // is first added?
+        CPozemek* tmp= new CPozemek(city, addr, region, id);
+        pole.insert(pole.begin(), tmp);
+        orderPole[0]=tmp;
+        zeroIdxFilled=true;
+        return true;
+    }
+    CPozemek* tmp= new CPozemek(city, addr, region, id);
+    for (unsigned long long int i =0 ; i<= lastIdxPozemek; i++){ // adding from the front, check on the way if a suitable spot is availible if it is... shuffle the rest to the back, if not add at the end
+        if (pole[i]->mesto==city){
+            if(pole[i]->ulice > addr){
+                lastIdxPozemek++;
+                CPozemek* tmp= new CPozemek(city, addr, region, id);
+                pole.insert(pole.begin()+i, tmp);
+                break;
+            }
+        }else if (pole[i]->mesto > city){
+            lastIdxPozemek++;
+            CPozemek* tmp= new CPozemek(city, addr, region, id);
+            pole.insert(pole.begin()+i, tmp);
+            break;
+        }else{
+            continue;
         }
     }
-    if(!zeroIdxFilled){
-        lastIdxPozemek++;
-        zeroIdxFilled=true;
-    }
-    pole[lastIdxPozemek].mesto=city;
-    pole[lastIdxPozemek].ulice=addr;
-    pole[lastIdxPozemek].region=region;
-    pole[lastIdxPozemek].id=id;
+    orderPole[lastIdxPozemek]=tmp;
     return true;
 }
 bool CLandRegister::Del(const string &region, unsigned int id) {
-    for(int i=0 ; i<=lastIdxPozemek ; i++){
-        if(pole[i].region == region && pole[i].id==id){
-            // checknem jestli tam je aspon jedno / vic nez jedno
-            if(lastIdxPozemek==0 && !zeroIdxFilled){
-                return false;
-            }else if(lastIdxPozemek==0 && zeroIdxFilled){
-                clearPozemek(&pole[i]);
-                zeroIdxFilled=false;
-                return true;
-            }else if(lastIdxPozemek==i){
-                clearPozemek(&pole[i]);
-                lastIdxPozemek--;
-                return true;
-            }else{
-                clearPozemek(&pole[i]);
-                pole[i]=pole[lastIdxPozemek];
-                return true;
-            }
+    /*For each input in array of pole, find it using provided information, delete  using the same infromation from ownerPole, later delete also from orderPole*/
 
+    for (int i = 0 ; i<=lastIdxPozemek;i++){
+        if (pole[i]->region == region && pole[i]->id== id){
+            if(!pole[i]->majitel.empty()){     // has an owner
+                unsigned long long n=0;
+                while(1){
+                    if(tolower(ownerPole[n][0]->majitel)==tolower(pole[i]->majitel)){ // i already have a vector with this owner
+                        for (int l =0 ; l<ownerPole[n].size(); l++){
+                            if (ownerPole[n][l]->region == region && ownerPole[n][l]->id == id){
+                                ownerPole[n].erase(ownerPole[n].begin()+l);
+                                break;
+                            }
+                        }
+                        break;
+                    }else if(ownerPole.at(n)==ownerPole.back()){ // i dont have a vector with this owner
+                        cout << "Found exception, shouldve deleted but couldnt find a owner vector" << endl;
+                        break;
+                    }
+                    n++;
+                }
+                pole.erase(pole.begin()+i);
+                break;
+            }
+        }
+
+    }
+    for (int i = 0 ; i<=lastIdxPozemek;i++){
+        if (orderPole[i]->region == region && orderPole[i]->id == id){
+            delete orderPole[i];
+            orderPole.erase(orderPole.begin()+i);
+
+            if(lastIdxPozemek!=0) // lastIdxPozemek goes down , has to check if deleted last one
+                lastIdxPozemek--;
+            else
+                zeroIdxFilled=false;
+
+            return true;
         }
     }
+
     return false;
 }
-bool CLandRegister::Del(const string &city,const string &addr) {
-    for(int i=0 ; i<=lastIdxPozemek ; i++){
-        if(pole[i].mesto == city && pole[i].ulice==addr){
-            // checknem jestli tam je aspon jedno / vic nez jedno
-            if(lastIdxPozemek==0 && !zeroIdxFilled){
-                return false;
-            }else if(lastIdxPozemek==0 && zeroIdxFilled){
-                clearPozemek(&pole[i]);
-                zeroIdxFilled=false;
-                return true;
-            }else if(lastIdxPozemek==i){
-                clearPozemek(&pole[i]);
-                lastIdxPozemek--;
-                return true;
-            }else{
-                clearPozemek(&pole[i]);
-                pole[i]=pole[lastIdxPozemek];
-                return true;
-            }
 
+bool CLandRegister::Del(const string &city,const string &addr) {
+    for (int i = 0 ; i<=lastIdxPozemek;i++){
+        if (pole[i]->mesto == city && pole[i]->ulice == addr){
+
+            if(!pole[i]->majitel.empty()){// has an owner
+                unsigned long long n=0;
+                while(1){
+                    if(tolower(ownerPole[n][0]->majitel)==tolower(pole[i]->majitel)){ // i already have a vector with this owner
+                        for (int l =0 ; l<ownerPole[n].size(); l++){
+                            if (ownerPole[n][l]->mesto == city && ownerPole[n][l]->ulice == addr){
+                                ownerPole[n].erase(ownerPole[n].begin()+l);
+                                break;
+                            }
+                        }
+                        break;
+                    }else if(ownerPole.at(n)==ownerPole.back()){ // i dont have a vector with this owner
+                        cout << "Found exception, shouldve deleted but couldnt find a owner vector" << endl;
+                        break;
+                    }
+                    n++;
+                }
+                pole.erase(pole.begin()+i);
+                break;
+            }
         }
     }
+    for (int i = 0 ; i<=lastIdxPozemek;i++){
+        if (orderPole[i]->mesto == city && orderPole[i]->ulice == addr){
+            delete orderPole[i];
+            orderPole.erase(orderPole.begin()+i);
+
+            if(lastIdxPozemek!=0) // lastIdxPozemek goes down , has to check if deleted last one
+                lastIdxPozemek--;
+            else
+                zeroIdxFilled=false;
+
+            return true;
+        }
+    }
+
     return false;
 }
 
 bool CLandRegister::GetOwner(const string &city, const string &addr, string &owner) const {
-    for(int i=0 ; i<=lastIdxPozemek ; i++){
-        if(pole[i].mesto == city && pole[i].ulice == addr){
-            owner = pole[i].majitel;
-            return true;
+    for (int i = 0 ; i<=lastIdxPozemek;i++){
+        if (pole[i]->mesto == city && pole[i]->ulice == addr){ // found pozemek
+            if(pole[i]->majitel.empty()){ // if requested is empty, owned by state, clear owner return true
+                owner.clear();
+                return true;
+            }else {
+                owner = pole[i]->majitel;
+                return true;
+            }
         }
     }
     return false;
 }
 
 bool CLandRegister::GetOwner(const string &region, unsigned int id, string &owner) const {
-    for(int i=0 ; i<=lastIdxPozemek ; i++){
-        if(pole[i].region == region && pole[i].id == id){
-            owner = pole[i].majitel;
-            return true;
+    for (int i = 0 ; i<=lastIdxPozemek;i++){
+        if (pole[i]->region == region && pole[i]->id == id){
+            if(pole[i]->majitel.empty()){
+                owner.clear();
+                return true;
+            }else{
+                owner = pole[i]->majitel;
+                return true;
+            }
         }
     }
     return false;
 }
 
 bool CLandRegister::NewOwner(const string &region, unsigned int id, const string &owner) {
-    for(int i=0 ; i<=lastIdxPozemek ; i++){
-        if(pole[i].region == region && pole[i].id == id){
-            if(pole[i].majitel == owner){
+    for (int i = 0;i<=lastIdxPozemek;i++){
+        if (pole[i]->region == region && pole[i]->id == id){
+            if(tolower(pole[i]->majitel)==tolower(owner))
                 return false;
+
+            if (!(pole[i]->majitel.empty())) {
+                for(int d=0; d<ownerPole.size();d++){
+                    if(tolower(ownerPole[d][0]->majitel)==tolower(pole[i]->majitel)){
+                        for(int s=0;s<ownerPole[d].size();s++){
+                            if(ownerPole[d][s]->region == region && ownerPole[d][s]->id == id){ // found the exact one to be renamed
+                                ownerPole[d].erase(ownerPole[d].begin()+s); // if deleted leaves empty vector delete it too
+                                if(ownerPole[d].empty()){
+                                    ownerPole.erase(ownerPole.begin()+d);
+                                }
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            
+            pole[i]->majitel = owner;
+            // check if i dont already have a vector for this owner
+            if(!ownerPole.empty()){
+                unsigned long long n=0;
+
+                while(1){
+                    if(tolower(ownerPole[n][0]->majitel)==tolower(pole[i]->majitel)){ // i already have a vector with this owner
+                        ownerPole[n].push_back(pole[i]);
+                        return true;
+                    }
+
+                    if(ownerPole.at(n)==ownerPole.back()){ // i dont have a vector with this owner
+                        vector<CPozemek*> tmp;
+                        tmp.push_back(pole[i]);
+                        ownerPole.push_back(tmp);
+                        return true;
+                    }
+                    n++;
+                }
             }else{
-                pole[i].majitel = owner;
+                //i dont so i create a vector for him
+                vector<CPozemek*> tmp;
+                tmp.push_back(pole[i]);
+                ownerPole.push_back(tmp);
+                return true;
             }
         }
     }
@@ -246,12 +375,52 @@ bool CLandRegister::NewOwner(const string &region, unsigned int id, const string
 }
 
 bool CLandRegister::NewOwner(const string &city, const string &addr, const string &owner) {
-    for(int i=0 ; i<=lastIdxPozemek ; i++){
-        if(pole[i].mesto == city && pole[i].ulice == addr){
-            if(pole[i].majitel == owner){
+    for (int i = 0;i<=lastIdxPozemek;i++){
+        if (pole[i]->mesto == city && pole[i]->ulice == addr){
+            if(tolower(pole[i]->majitel)==tolower(owner))
                 return false;
+            // have to delete him from wht previous vector
+            if (!(pole[i]->majitel.empty())) {
+                for(int d=0; d<ownerPole.size();d++){
+                    if(tolower(ownerPole[d][0]->majitel)==tolower(owner)){
+                        for(int s=0;s<ownerPole[d].size();s++){
+                            if(ownerPole[d][s]->mesto == city && ownerPole[d][s]->ulice == addr){
+                                ownerPole[d].erase(ownerPole[d].begin()+s);
+                                if(ownerPole[d].empty()){
+                                    ownerPole.erase(ownerPole.begin()+d);
+                                }
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            pole[i]->majitel = owner;
+            // check if i dont already have a vector for this owner
+            if(!ownerPole.empty()){
+                unsigned long long n=0;
+
+                while(1){
+                    if(tolower(ownerPole[n][0]->majitel)==tolower(owner)){ // i already have a vector with this owner
+                        ownerPole[n].push_back(pole[i]);
+                        return true;
+                    }
+
+                    if(ownerPole.at(n)==ownerPole.back()){ // i dont have a vector with this owner
+                        vector<CPozemek*> tmp;
+                        tmp.push_back(pole[i]);
+                        ownerPole.push_back(tmp);
+                        return true;
+                    }
+                    n++;
+                }
             }else{
-                pole[i].majitel = owner;
+                //i dont so i create a vector for him
+                vector<CPozemek*> tmp;
+                tmp.push_back(pole[i]);
+                ownerPole.push_back(tmp);
+                return true;
             }
         }
     }
@@ -259,13 +428,27 @@ bool CLandRegister::NewOwner(const string &city, const string &addr, const strin
 }
 
 unsigned CLandRegister::Count(const string &owner) const {
-    unsigned counter=0;
-    for(int i=0 ; i<=lastIdxPozemek ; i++){
-        if(pole[i].majitel == owner){
-            counter++;
+    if(owner.empty()){
+        if(!zeroIdxFilled){
+            return 0;
+        }else{
+            return lastIdxPozemek+1;
         }
     }
-    return counter;
+    if(!ownerPole.empty()){
+        unsigned long long n=0;
+        while(1){
+            if(tolower(ownerPole[n][0]->majitel)==tolower(owner)){ // i already have a vector with this owner
+                return ((unsigned)ownerPole[n].size());
+            }
+
+            if(ownerPole.at(n)==ownerPole.back()){ // i dont have a vector with this owner
+                return 0;
+            }
+            n++;
+        }
+    }
+    return 0;
 }
 void CLandRegister::operator=(const CLandRegister &original) {
     lastIdxPozemek=original.lastIdxPozemek;
@@ -275,39 +458,48 @@ void CLandRegister::operator=(const CLandRegister &original) {
     }
 }
 
-bool sortMesto(const CPozemek& first, const CPozemek& second){
-    return (first.mesto<second.mesto);
-}
-bool sortUlice(const CPozemek& first, const CPozemek& second){
-    return (first.ulice<second.ulice);
-}
 CIterator CLandRegister::ListByAddr(void) const {
     CIterator tmp;
-    int pushingBack =0;
-    vector<CPozemek> tempSort;
-    sort (pole[0], pole[lastIdxPozemek], sortMesto());
-    for(int i =0 ; i<lastIdxPozemek ; i++) {
-        if (pole[i].mesto ==pole[i + 1].mesto) { // found two same city, should create a vector for places with same city
-            if(!pushingBack){
-                tempSort.push_back(pole[i]);
-            }
-            tempSort.push_back(pole[i+1]);
-            pushingBack=1;
-        }else{
-            if(pushingBack){
-                sort(tempSort.begin(),tempSort.end(), sortUlice());
-            }
-            pushingBack=0;
-        }
-    }
-    tmp.curIdx=0;
     tmp.endIdx=lastIdxPozemek;
+    tmp.curIdx=0;
+    tmp.seznam.resize(lastIdxPozemek+1);
+    for (int i =0 ; i<=lastIdxPozemek;i++){
+        tmp.seznam[i]=pole[i];
+    }
     return tmp;
 }
 
 CIterator CLandRegister::ListByOwner(const string &owner) const {
     CIterator tmp;
+    tmp.curIdx=0;
 
+    if (owner.empty()){ // checks wheter requested owner is empty -- gives everyting
+        tmp.seznam.resize(lastIdxPozemek+1);
+        for(int i =0;i<=lastIdxPozemek ; i++){
+            tmp.seznam[i]=orderPole[i];
+        }
+        tmp.endIdx=lastIdxPozemek;
+        return tmp;
+    }
+
+    if(!ownerPole.empty()){ // checks if vector for owners is empty (no owners set yet)
+        unsigned long long n=0;
+        while(1){
+            if(tolower(ownerPole[n][0]->majitel)==tolower(owner)){             // i already have a vector with this owner
+                tmp.seznam.resize(ownerPole[n].size());
+                tmp.endIdx=ownerPole[n].size()-1;
+                tmp.seznam=ownerPole[n];                // copied the prepared vector for this
+                return tmp;
+            }
+
+            if(ownerPole.at(n)==ownerPole.back()){          // i dont have a vector with this owner
+                break;
+            }
+            n++;
+        }
+    }
+    tmp.endIdx=0;
+    return tmp;
 }
 
 #ifndef __PROGTEST__
