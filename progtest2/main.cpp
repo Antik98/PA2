@@ -26,9 +26,10 @@ public:
     string region;
     unsigned int id;
     string majitel;
-    CPozemek operator=(CPozemek &other);
+    void operator=(const CPozemek&);
 };
-CPozemek CPozemek::operator=(CPozemek &other) {
+
+void CPozemek::operator=(const CPozemek &other) {
     mesto=other.mesto;
     ulice=other.ulice;
     region=other.region;
@@ -67,10 +68,12 @@ public:
     string Owner(void) const{
         return seznam[curIdx].majitel;
     }
-    vector<CPozemek*> seznam;
-private:
+    vector<CPozemek> seznam;
+
     int curIdx;
     int endIdx;
+private:
+
 };
 
 
@@ -78,7 +81,8 @@ class CLandRegister {
 public:
     CLandRegister()
         :maxNumPozemek(1000),
-        lastIdxPozemek(0){
+        lastIdxPozemek(0),
+        zeroIdxFilled(0){
         pole.resize(maxNumPozemek);
     }
 
@@ -116,6 +120,8 @@ public:
     CIterator ListByOwner(const string &owner) const;
 
     vector<CPozemek> pole;
+
+    void operator=(const CLandRegister&);
 
     bool checkDupe(const string &city,
                    const string &addr,
@@ -260,6 +266,48 @@ unsigned CLandRegister::Count(const string &owner) const {
         }
     }
     return counter;
+}
+void CLandRegister::operator=(const CLandRegister &original) {
+    lastIdxPozemek=original.lastIdxPozemek;
+    zeroIdxFilled=original.zeroIdxFilled;
+    for(int i =0 ; i<=lastIdxPozemek; i++){
+        pole[i]=original.pole[i];
+    }
+}
+
+bool sortMesto(const CPozemek& first, const CPozemek& second){
+    return (first.mesto<second.mesto);
+}
+bool sortUlice(const CPozemek& first, const CPozemek& second){
+    return (first.ulice<second.ulice);
+}
+CIterator CLandRegister::ListByAddr(void) const {
+    CIterator tmp;
+    int pushingBack =0;
+    vector<CPozemek> tempSort;
+    sort (pole[0], pole[lastIdxPozemek], sortMesto());
+    for(int i =0 ; i<lastIdxPozemek ; i++) {
+        if (pole[i].mesto ==pole[i + 1].mesto) { // found two same city, should create a vector for places with same city
+            if(!pushingBack){
+                tempSort.push_back(pole[i]);
+            }
+            tempSort.push_back(pole[i+1]);
+            pushingBack=1;
+        }else{
+            if(pushingBack){
+                sort(tempSort.begin(),tempSort.end(), sortUlice());
+            }
+            pushingBack=0;
+        }
+    }
+    tmp.curIdx=0;
+    tmp.endIdx=lastIdxPozemek;
+    return tmp;
+}
+
+CIterator CLandRegister::ListByOwner(const string &owner) const {
+    CIterator tmp;
+
 }
 
 #ifndef __PROGTEST__
