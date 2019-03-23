@@ -96,14 +96,29 @@ private:
 class CLandRegister {
 public:
     CLandRegister()
-            :maxNumPozemek(1000),
-             lastIdxPozemek(0),
-             zeroIdxFilled(0){
+            :zeroIdxFilled(0),
+            lastIdxPozemek(0),
+            maxNumPozemek(1000){
         pole.resize(maxNumPozemek);
         orderPole.resize(maxNumPozemek);
     }
     ~CLandRegister(){  // TODO
+        for(unsigned int l=0;l<ownerPole.size();l++){
+            ownerPole[l].clear();
+            ownerPole[l].shrink_to_fit();
+        }
         ownerPole.clear();
+        ownerPole.shrink_to_fit();
+        orderPole.shrink_to_fit();
+        orderPole.clear();
+        pole.shrink_to_fit();
+        for(unsigned long i=0;i<pole.size(); i++){
+            delete pole[i];
+            cout<< pole.size() << endl;
+        }
+        pole.clear();
+        pole.shrink_to_fit();
+
     }
     bool Add(const string &city,
              const string &addr,
@@ -154,7 +169,7 @@ private:
     unsigned long maxNumPozemek;
 };
 bool CLandRegister::checkDupe(const string &city, const string &addr, const string &region, unsigned int id) const {
-    for (int i = 0 ; i<=lastIdxPozemek; i++){
+    for (unsigned long i = 0 ; i<=lastIdxPozemek; i++){
         if(pole[i]->mesto==city && pole[i]->ulice ==addr){
             return true;
         }
@@ -205,13 +220,13 @@ bool CLandRegister::Add(const string &city, const string &addr, const string &re
 bool CLandRegister::Del(const string &region, unsigned int id) {
     /*For each input in array of pole, find it using provided information, delete  using the same infromation from ownerPole, later delete also from orderPole*/
 
-    for (int i = 0 ; i<=lastIdxPozemek;i++){
+    for (unsigned long i = 0 ; i<=lastIdxPozemek;i++){
         if (pole[i]->region == region && pole[i]->id== id){
             if(!pole[i]->majitel.empty()){     // has an owner
                 unsigned long long n=0;
                 while(1){
                     if(tolower(ownerPole[n][0]->majitel)==tolower(pole[i]->majitel)){ // i already have a vector with this owner
-                        for (int l =0 ; l<ownerPole[n].size(); l++){
+                        for (unsigned long l =0 ; l<ownerPole[n].size(); l++){
                             if (ownerPole[n][l]->region == region && ownerPole[n][l]->id == id){
                                 ownerPole[n].erase(ownerPole[n].begin()+l);
                                 break;
@@ -230,7 +245,7 @@ bool CLandRegister::Del(const string &region, unsigned int id) {
         }
 
     }
-    for (int i = 0 ; i<=lastIdxPozemek;i++){
+    for (unsigned long i = 0 ; i<=lastIdxPozemek;i++){
         if (orderPole[i]->region == region && orderPole[i]->id == id){
             delete orderPole[i];
             orderPole.erase(orderPole.begin()+i);
@@ -248,14 +263,14 @@ bool CLandRegister::Del(const string &region, unsigned int id) {
 }
 
 bool CLandRegister::Del(const string &city,const string &addr) {
-    for (int i = 0 ; i<=lastIdxPozemek;i++){
+    for (unsigned long i = 0 ; i<=lastIdxPozemek;i++){
         if (pole[i]->mesto == city && pole[i]->ulice == addr){
 
             if(!pole[i]->majitel.empty()){// has an owner
                 unsigned long long n=0;
                 while(1){
                     if(tolower(ownerPole[n][0]->majitel)==tolower(pole[i]->majitel)){ // i already have a vector with this owner
-                        for (int l =0 ; l<ownerPole[n].size(); l++){
+                        for (unsigned long l =0 ; l<ownerPole[n].size(); l++){
                             if (ownerPole[n][l]->mesto == city && ownerPole[n][l]->ulice == addr){
                                 ownerPole[n].erase(ownerPole[n].begin()+l);
                                 break;
@@ -273,7 +288,7 @@ bool CLandRegister::Del(const string &city,const string &addr) {
             }
         }
     }
-    for (int i = 0 ; i<=lastIdxPozemek;i++){
+    for (unsigned long i = 0 ; i<=lastIdxPozemek;i++){
         if (orderPole[i]->mesto == city && orderPole[i]->ulice == addr){
             delete orderPole[i];
             orderPole.erase(orderPole.begin()+i);
@@ -291,7 +306,7 @@ bool CLandRegister::Del(const string &city,const string &addr) {
 }
 
 bool CLandRegister::GetOwner(const string &city, const string &addr, string &owner) const {
-    for (int i = 0 ; i<=lastIdxPozemek;i++){
+    for (unsigned long i = 0 ; i<=lastIdxPozemek;i++){
         if (pole[i]->mesto == city && pole[i]->ulice == addr){ // found pozemek
             if(pole[i]->majitel.empty()){ // if requested is empty, owned by state, clear owner return true
                 owner.clear();
@@ -306,7 +321,7 @@ bool CLandRegister::GetOwner(const string &city, const string &addr, string &own
 }
 
 bool CLandRegister::GetOwner(const string &region, unsigned int id, string &owner) const {
-    for (int i = 0 ; i<=lastIdxPozemek;i++){
+    for (unsigned long i = 0 ; i<=lastIdxPozemek;i++){
         if (pole[i]->region == region && pole[i]->id == id){
             if(pole[i]->majitel.empty()){
                 owner.clear();
@@ -321,15 +336,15 @@ bool CLandRegister::GetOwner(const string &region, unsigned int id, string &owne
 }
 
 bool CLandRegister::NewOwner(const string &region, unsigned int id, const string &owner) {
-    for (int i = 0;i<=lastIdxPozemek;i++){
+    for (unsigned long i = 0;i<=lastIdxPozemek;i++){
         if (pole[i]->region == region && pole[i]->id == id){
             if(tolower(pole[i]->majitel)==tolower(owner))
                 return false;
 
             if (!(pole[i]->majitel.empty())) {
-                for(int d=0; d<ownerPole.size();d++){
+                for(unsigned long d=0; d<ownerPole.size();d++){
                     if(tolower(ownerPole[d][0]->majitel)==tolower(pole[i]->majitel)){
-                        for(int s=0;s<ownerPole[d].size();s++){
+                        for(unsigned long s=0;s<ownerPole[d].size();s++){
                             if(ownerPole[d][s]->region == region && ownerPole[d][s]->id == id){ // found the exact one to be renamed
                                 ownerPole[d].erase(ownerPole[d].begin()+s); // if deleted leaves empty vector delete it too
                                 if(ownerPole[d].empty()){
@@ -342,7 +357,7 @@ bool CLandRegister::NewOwner(const string &region, unsigned int id, const string
                     }
                 }
             }
-            
+
             pole[i]->majitel = owner;
             // check if i dont already have a vector for this owner
             if(!ownerPole.empty()){
@@ -375,15 +390,15 @@ bool CLandRegister::NewOwner(const string &region, unsigned int id, const string
 }
 
 bool CLandRegister::NewOwner(const string &city, const string &addr, const string &owner) {
-    for (int i = 0;i<=lastIdxPozemek;i++){
+    for (unsigned long i = 0;i<=lastIdxPozemek;i++){
         if (pole[i]->mesto == city && pole[i]->ulice == addr){
             if(tolower(pole[i]->majitel)==tolower(owner))
                 return false;
             // have to delete him from wht previous vector
             if (!(pole[i]->majitel.empty())) {
-                for(int d=0; d<ownerPole.size();d++){
+                for(unsigned long d=0; d<ownerPole.size();d++){
                     if(tolower(ownerPole[d][0]->majitel)==tolower(owner)){
-                        for(int s=0;s<ownerPole[d].size();s++){
+                        for(unsigned long s=0;s<ownerPole[d].size();s++){
                             if(ownerPole[d][s]->mesto == city && ownerPole[d][s]->ulice == addr){
                                 ownerPole[d].erase(ownerPole[d].begin()+s);
                                 if(ownerPole[d].empty()){
@@ -453,7 +468,7 @@ unsigned CLandRegister::Count(const string &owner) const {
 void CLandRegister::operator=(const CLandRegister &original) {
     lastIdxPozemek=original.lastIdxPozemek;
     zeroIdxFilled=original.zeroIdxFilled;
-    for(int i =0 ; i<=lastIdxPozemek; i++){
+    for(unsigned long i =0 ; i<=lastIdxPozemek; i++){
         pole[i]=original.pole[i];
     }
 }
@@ -463,7 +478,7 @@ CIterator CLandRegister::ListByAddr(void) const {
     tmp.endIdx=lastIdxPozemek;
     tmp.curIdx=0;
     tmp.seznam.resize(lastIdxPozemek+1);
-    for (int i =0 ; i<=lastIdxPozemek;i++){
+    for (unsigned long i =0 ; i<=lastIdxPozemek;i++){
         tmp.seznam[i]=pole[i];
     }
     return tmp;
@@ -475,7 +490,7 @@ CIterator CLandRegister::ListByOwner(const string &owner) const {
 
     if (owner.empty()){ // checks wheter requested owner is empty -- gives everyting
         tmp.seznam.resize(lastIdxPozemek+1);
-        for(int i =0;i<=lastIdxPozemek ; i++){
+        for(unsigned long i =0;i<=lastIdxPozemek ; i++){
             tmp.seznam[i]=orderPole[i];
         }
         tmp.endIdx=lastIdxPozemek;
