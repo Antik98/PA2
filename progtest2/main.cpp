@@ -29,8 +29,6 @@ string tolower(string retezec){ // comparison of strings
     }
     return tmp;
 }
-
-
 class CPozemek{ // should be used as the original template
 
 public:
@@ -41,7 +39,6 @@ public:
     string ulice;
     string region;
     unsigned int id;
-    void operator=(const CPozemek&);
     string majitel;
 };
 
@@ -100,7 +97,7 @@ public:
              lastIdxPozemek(0),
              maxNumPozemek(1000){
     }
-    ~CLandRegister(){  // TODO
+    ~CLandRegister(){
         for(unsigned int l=0;l<ownerPole.size();l++){
             ownerPole[l].clear();
             ownerPole[l].shrink_to_fit();
@@ -177,6 +174,9 @@ bool CLandRegister::checkDupe(const string &city, const string &addr, const stri
     return false;
 }
 bool CLandRegister::Add(const string &city, const string &addr, const string &region, unsigned int id) {
+    if(city.empty()|| addr.empty() || region.empty())
+        return false;
+
     if(zeroIdxFilled && checkDupe(city, addr, region, id))
         return false;
 
@@ -201,6 +201,11 @@ bool CLandRegister::Add(const string &city, const string &addr, const string &re
             orderPole.push_back(tmp);
             pole.insert(pole.begin()+i, tmp);
             break;
+        }else if(i == lastIdxPozemek) {
+            lastIdxPozemek++;
+            orderPole.push_back(tmp);
+            pole.push_back(tmp);
+            break;
         }else{
             continue;
         }
@@ -209,6 +214,8 @@ bool CLandRegister::Add(const string &city, const string &addr, const string &re
 }
 bool CLandRegister::Del(const string &region, unsigned int id) {
     /*For each input in array of pole, find it using provided information, delete  using the same infromation from ownerPole, later delete also from orderPole*/
+    if(region.empty())
+        return false;
 
     for (unsigned long i = 0 ; i<=lastIdxPozemek;i++){
         if (pole[i]->region == region && pole[i]->id== id){
@@ -253,21 +260,25 @@ bool CLandRegister::Del(const string &region, unsigned int id) {
 }
 
 bool CLandRegister::Del(const string &city,const string &addr) {
+    if(city.empty()|| addr.empty() )
+        return false;
+
     for (unsigned long i = 0 ; i<=lastIdxPozemek;i++){
         if (pole[i]->mesto == city && pole[i]->ulice == addr){
 
-            if(!pole[i]->majitel.empty()){// has an owner
-                unsigned long long n=0;
-                while(1){
-                    if(tolower(ownerPole[n][0]->majitel)==tolower(pole[i]->majitel)){ // i already have a vector with this owner
-                        for (unsigned long l =0 ; l<ownerPole[n].size(); l++){
-                            if (ownerPole[n][l]->mesto == city && ownerPole[n][l]->ulice == addr){
-                                ownerPole[n].erase(ownerPole[n].begin()+l);
+            if(!pole[i]->majitel.empty()) {// has an owner
+                unsigned long long n = 0;
+                while (1) {
+                    if (tolower(ownerPole[n][0]->majitel) ==
+                        tolower(pole[i]->majitel)) { // i already have a vector with this owner
+                        for (unsigned long l = 0; l < ownerPole[n].size(); l++) {
+                            if (ownerPole[n][l]->mesto == city && ownerPole[n][l]->ulice == addr) {
+                                ownerPole[n].erase(ownerPole[n].begin() + l);
                                 break;
                             }
                         }
                         break;
-                    }else if(ownerPole.at(n)==ownerPole.back()){ // i dont have a vector with this owner
+                    } else if (ownerPole.at(n) == ownerPole.back()) { // i dont have a vector with this owner
                         cout << "Found exception, shouldve deleted but couldnt find a owner vector" << endl;
                         break;
                     }
@@ -291,11 +302,13 @@ bool CLandRegister::Del(const string &city,const string &addr) {
             return true;
         }
     }
-
     return false;
 }
 
 bool CLandRegister::GetOwner(const string &city, const string &addr, string &owner) const {
+    if(city.empty()|| addr.empty())
+        return false;
+
     for (unsigned long i = 0 ; i<=lastIdxPozemek;i++){
         if (pole[i]->mesto == city && pole[i]->ulice == addr){ // found pozemek
             if(pole[i]->majitel.empty()){ // if requested is empty, owned by state, clear owner return true
@@ -311,6 +324,9 @@ bool CLandRegister::GetOwner(const string &city, const string &addr, string &own
 }
 
 bool CLandRegister::GetOwner(const string &region, unsigned int id, string &owner) const {
+    if(region.empty())
+        return false;
+
     for (unsigned long i = 0 ; i<=lastIdxPozemek;i++){
         if (pole[i]->region == region && pole[i]->id == id){
             if(pole[i]->majitel.empty()){
@@ -326,6 +342,10 @@ bool CLandRegister::GetOwner(const string &region, unsigned int id, string &owne
 }
 
 bool CLandRegister::NewOwner(const string &region, unsigned int id, const string &owner) {
+    if(region.empty())
+        return false;
+
+
     for (unsigned long i = 0;i<=lastIdxPozemek;i++){
         if (pole[i]->region == region && pole[i]->id == id){
             if(tolower(pole[i]->majitel)==tolower(owner))
@@ -333,7 +353,7 @@ bool CLandRegister::NewOwner(const string &region, unsigned int id, const string
 
             if (!(pole[i]->majitel.empty())) {
                 for(unsigned long d=0; d<ownerPole.size();d++){
-                    if(tolower(ownerPole[d][0]->majitel)==tolower(pole[i]->majitel)){
+                    if(tolower(ownerPole[d][0]->majitel)!=tolower(pole[i]->majitel)){
                         for(unsigned long s=0;s<ownerPole[d].size();s++){
                             if(ownerPole[d][s]->region == region && ownerPole[d][s]->id == id){ // found the exact one to be renamed
                                 ownerPole[d].erase(ownerPole[d].begin()+s); // if deleted leaves empty vector delete it too
@@ -347,7 +367,6 @@ bool CLandRegister::NewOwner(const string &region, unsigned int id, const string
                     }
                 }
             }
-
             pole[i]->majitel = owner;
             // check if i dont already have a vector for this owner
             if(!ownerPole.empty()){
@@ -380,6 +399,9 @@ bool CLandRegister::NewOwner(const string &region, unsigned int id, const string
 }
 
 bool CLandRegister::NewOwner(const string &city, const string &addr, const string &owner) {
+    if(city.empty()|| addr.empty())
+        return false;
+
     for (unsigned long i = 0;i<=lastIdxPozemek;i++){
         if (pole[i]->mesto == city && pole[i]->ulice == addr){
             if(tolower(pole[i]->majitel)==tolower(owner))
@@ -387,7 +409,7 @@ bool CLandRegister::NewOwner(const string &city, const string &addr, const strin
             // have to delete him from wht previous vector
             if (!(pole[i]->majitel.empty())) {
                 for(unsigned long d=0; d<ownerPole.size();d++){
-                    if(tolower(ownerPole[d][0]->majitel)==tolower(owner)){
+                    if(tolower(ownerPole[d][0]->majitel)!=tolower(owner)){
                         for(unsigned long s=0;s<ownerPole[d].size();s++){
                             if(ownerPole[d][s]->mesto == city && ownerPole[d][s]->ulice == addr){
                                 ownerPole[d].erase(ownerPole[d].begin()+s);
@@ -455,21 +477,16 @@ unsigned CLandRegister::Count(const string &owner) const {
     }
     return 0;
 }
-void CLandRegister::operator=(const CLandRegister &original) {
-    lastIdxPozemek=original.lastIdxPozemek;
-    zeroIdxFilled=original.zeroIdxFilled;
-    for(unsigned long i =0 ; i<=lastIdxPozemek; i++){
-        pole[i]=original.pole[i];
-    }
-}
 
 CIterator CLandRegister::ListByAddr(void) const {
     CIterator tmp;
     tmp.endIdx=lastIdxPozemek;
     tmp.curIdx=0;
-    tmp.seznam.resize(lastIdxPozemek+1);
-    for (unsigned long i =0 ; i<=lastIdxPozemek;i++){
-        tmp.seznam[i]=pole[i];
+    if(!pole.empty()){
+        tmp.seznam.resize(lastIdxPozemek+1);
+        for (unsigned long i =0 ; i<=lastIdxPozemek;i++){
+            tmp.seznam[i]=pole[i];
+        }
     }
     return tmp;
 }
@@ -492,7 +509,11 @@ CIterator CLandRegister::ListByOwner(const string &owner) const {
         while(1){
             if(tolower(ownerPole[n][0]->majitel)==tolower(owner)){             // i already have a vector with this owner
                 tmp.seznam.resize(ownerPole[n].size());
-                tmp.endIdx=ownerPole[n].size()-1;
+                if(ownerPole[n].size()>=1){
+                    tmp.endIdx=ownerPole[n].size()-1;
+                }else{
+                    tmp.endIdx=ownerPole[n].size();
+                }
                 tmp.seznam=ownerPole[n];                // copied the prepared vector for this
                 return tmp;
             }
@@ -518,6 +539,74 @@ static void test0(void) {
     assert (x.Add("Prague", "Technicka", "Dejvice", 9873));
     assert (x.Add("Plzen", "Evropska", "Plzen mesto", 78901));
     assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+/*    assert (x.Del("Liberec", "Evropska"));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Librec", 4552));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Liberec", "Evropska"));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Librec", 4552));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Liberec", "Evropska"));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Librec", 4552));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Liberec", "Evropska"));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Librec", 4552));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Liberec", "Evropska"));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Librec", 4552));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Liberec", "Evropska"));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Librec", 4552));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Liberec", "Evropska"));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Librec", 4552));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Liberec", "Evropska"));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Librec", 4552));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Liberec", "Evropska"));
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.Del("Librec", 4552));
+
+    assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+    assert (x.NewOwner("Liberec", "Evropska","CVUT"));
+    assert (x.NewOwner("Liberec", "Evropska","Michal Dvorak"));
+    assert (x.NewOwner("Librec", 4552,"CVUT"));
+    assert (x.NewOwner("Librec", 4552,"Michal Dvorak"));
+    assert (x.NewOwner("Librec", 4552,"CVUT"));
+    assert (x.NewOwner("Liberec", "Evropska","Michal Dvorak"));
+    assert (x.NewOwner("Liberec", "Evropska","CVUT"));
+    assert (x.NewOwner("Liberec", "Evropska","Michal Dvorak"));
+    assert (x.NewOwner("Librec", 4552,"CVUT"));
+    assert (x.NewOwner("Librec", 4552,"Michal Dvorak"));
+    assert (x.NewOwner("Librec", 4552,"CVUT"));
+    assert (x.NewOwner("Liberec", "Evropska","Michal Dvorak"));
+    assert (x.NewOwner("Liberec", "Evropska","CVUT"));
+    assert (x.NewOwner("Liberec", "Evropska","Michal Dvorak"));
+    assert (x.NewOwner("Librec", 4552,"CVUT"));
+    assert (x.NewOwner("Librec", 4552,"Michal Dvorak"));
+    assert (x.NewOwner("Librec", 4552,"CVUT"));
+    assert (x.NewOwner("Liberec", "Evropska","Michal Dvorak"));
+    assert (x.NewOwner("Liberec", "Evropska","CVUT"));
+    assert (x.NewOwner("Liberec", "Evropska","Michal Dvorak"));
+    assert (x.NewOwner("Librec", 4552,"CVUT"));
+    assert (x.NewOwner("Librec", 4552,"Michal Dvorak"));
+    assert (x.NewOwner("Librec", 4552,"CVUT"));
+    assert (x.NewOwner("Liberec", "Evropska","Michal Dvorak"));
+
+*/
+    assert (x.Add("Tklppabprisjdofnmcca", "Ahoj", "Tklppabprnmcca", 737869));
+    assert (x.NewOwner("Tklppabprnmcca", 737869, "Michal Dvorak"));
+    assert (x.GetOwner("Tklppabprnmcca", 737869, owner) && owner == "Michal Dvorak");
+    assert (x.Del("Tklppabprnmcca", 737869));
+
     CIterator i0 = x.ListByAddr();
     assert (!i0.AtEnd()
             && i0.City() == "Liberec"
@@ -555,7 +644,6 @@ static void test0(void) {
             && i0.Owner() == "");
     i0.Next();
     assert (i0.AtEnd());
-
     assert (x.Count("") == 5);
     CIterator i1 = x.ListByOwner("");
     assert (!i1.AtEnd()
@@ -594,7 +682,6 @@ static void test0(void) {
             && i1.Owner() == "");
     i1.Next();
     assert (i1.AtEnd());
-
     assert (x.Count("CVUT") == 0);
     CIterator i2 = x.ListByOwner("CVUT");
     assert (i2.AtEnd());
@@ -613,6 +700,7 @@ static void test0(void) {
     assert (x.GetOwner("Plzen mesto", 78901, owner) && owner == "Anton Hrabis");
     assert (x.GetOwner("Liberec", "Evropska", owner) && owner == "Cvut");
     assert (x.GetOwner("Librec", 4552, owner) && owner == "Cvut");
+
     CIterator i3 = x.ListByAddr();
     assert (!i3.AtEnd()
             && i3.City() == "Liberec"
@@ -730,6 +818,8 @@ static void test0(void) {
     assert (i6.AtEnd());
 
     assert (x.Add("Liberec", "Evropska", "Librec", 4552));
+
+
 }
 
 static void test1(void) {
@@ -743,6 +833,10 @@ static void test1(void) {
     assert (!x.Add("Brno", "Bozetechova", "Dejvice", 9873));
     assert (!x.GetOwner("Prague", "THAKUROVA", owner));
     assert (!x.GetOwner("Hradcany", 7343, owner));
+
+
+
+
     CIterator i0 = x.ListByAddr();
     assert (!i0.AtEnd()
             && i0.City() == "Prague"
@@ -789,9 +883,13 @@ static void test1(void) {
     assert (x.Del("Prague", "Technicka"));
     assert (!x.Del("Prague", "Technicka"));
     assert (!x.Del("Dejvice", 9873));
+
 }
 
 int main(void) {
+
+
+
     test0();
     test1();
     return 0;
