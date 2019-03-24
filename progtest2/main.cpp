@@ -89,7 +89,14 @@ public:
 private:
 
 };
-
+struct cityAddr{
+        string mesto;
+        string addr;
+    };
+    struct regionId{
+        string region;
+        unsigned int id;
+    };
 class CLandRegister {
 public:
     CLandRegister()
@@ -162,7 +169,20 @@ private:
     unsigned long lastIdxPozemek;
     unsigned long maxNumPozemek;
 };
+bool compareCityAddr(const CPozemek& first, const CPozemek& second){
+    if(first.mesto<second.mesto)
+        return true;
+    if(first.mesto == second.mesto)
+        return (first.ulice < second.ulice);
+    return false;
+}
+
 bool CLandRegister::checkDupe(const string &city, const string &addr, const string &region, unsigned int id) const {
+    CPozemek tmp(city,addr,region,id);
+
+    binary_search(pole.begin(), pole.back(), tmp, compareCityAddr() );
+    
+    
     for (unsigned long i = 0 ; i<=lastIdxPozemek; i++){
         if(pole[i]->mesto==city && pole[i]->ulice ==addr){
             return true;
