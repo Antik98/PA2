@@ -264,13 +264,12 @@ bool CLandRegister::Del(const string &city,const string &addr) {
         return false;
 
     for (unsigned long i = 0 ; i<=lastIdxPozemek;i++){
-        if (pole[i]->mesto == city && pole[i]->ulice == addr){
+        if (pole[i]->mesto == city && pole[i]->ulice == addr){ // binary search
 
             if(!pole[i]->majitel.empty()) {// has an owner
                 unsigned long long n = 0;
                 while (1) {
-                    if (tolower(ownerPole[n][0]->majitel) ==
-                        tolower(pole[i]->majitel)) { // i already have a vector with this owner
+                    if (tolower(ownerPole[n][0]->majitel) == tolower(pole[i]->majitel)) { // i already have a vector with this owner
                         for (unsigned long l = 0; l < ownerPole[n].size(); l++) {
                             if (ownerPole[n][l]->mesto == city && ownerPole[n][l]->ulice == addr) {
                                 ownerPole[n].erase(ownerPole[n].begin() + l);
@@ -309,8 +308,8 @@ bool CLandRegister::GetOwner(const string &city, const string &addr, string &own
     if(city.empty()|| addr.empty())
         return false;
 
-    for (unsigned long i = 0 ; i<=lastIdxPozemek;i++){
-        if (pole[i]->mesto == city && pole[i]->ulice == addr){ // found pozemek
+    for (unsigned long i = 0 ; i<ownerPole.size();i++){
+        if (ownerPole[i][0]->mesto == city && ownerPole[i][0]->ulice == addr){ // found pozemek
             if(pole[i]->majitel.empty()){ // if requested is empty, owned by state, clear owner return true
                 owner.clear();
                 return true;
