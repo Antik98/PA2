@@ -49,10 +49,10 @@ CPozemek::CPozemek()
         :id(0){}
 
 CPozemek::CPozemek(const string &mesto, const string &ulice, const string &region, unsigned int id)
-    : mesto(mesto),
-      ulice(ulice),
-      region(region),
-      id(id) {}
+        : mesto(mesto),
+          ulice(ulice),
+          region(region),
+          id(id) {}
 
 class CIterator {
 public:
@@ -97,10 +97,8 @@ class CLandRegister {
 public:
     CLandRegister()
             :zeroIdxFilled(0),
-            lastIdxPozemek(0),
-            maxNumPozemek(1000){
-        pole.resize(maxNumPozemek);
-        orderPole.resize(maxNumPozemek);
+             lastIdxPozemek(0),
+             maxNumPozemek(1000){
     }
     ~CLandRegister(){  // TODO
         for(unsigned int l=0;l<ownerPole.size();l++){
@@ -114,7 +112,6 @@ public:
         pole.shrink_to_fit();
         for(unsigned long i=0;i<pole.size(); i++){
             delete pole[i];
-            cout<< pole.size() << endl;
         }
         pole.clear();
         pole.shrink_to_fit();
@@ -183,16 +180,10 @@ bool CLandRegister::Add(const string &city, const string &addr, const string &re
     if(zeroIdxFilled && checkDupe(city, addr, region, id))
         return false;
 
-    if (lastIdxPozemek+1 >= maxNumPozemek){ // check if vector overflowing
-        maxNumPozemek*=2;
-        pole.resize(maxNumPozemek);
-        orderPole.resize(maxNumPozemek);
-    }
-
     if(!zeroIdxFilled){ // is first added?
         CPozemek* tmp= new CPozemek(city, addr, region, id);
-        pole.insert(pole.begin(), tmp);
-        orderPole[0]=tmp;
+        pole.push_back(tmp);
+        orderPole.push_back(tmp);
         zeroIdxFilled=true;
         return true;
     }
@@ -201,20 +192,19 @@ bool CLandRegister::Add(const string &city, const string &addr, const string &re
         if (pole[i]->mesto==city){
             if(pole[i]->ulice > addr){
                 lastIdxPozemek++;
-                CPozemek* tmp= new CPozemek(city, addr, region, id);
+                orderPole.push_back(tmp);
                 pole.insert(pole.begin()+i, tmp);
                 break;
             }
         }else if (pole[i]->mesto > city){
             lastIdxPozemek++;
-            CPozemek* tmp= new CPozemek(city, addr, region, id);
+            orderPole.push_back(tmp);
             pole.insert(pole.begin()+i, tmp);
             break;
         }else{
             continue;
         }
     }
-    orderPole[lastIdxPozemek]=tmp;
     return true;
 }
 bool CLandRegister::Del(const string &region, unsigned int id) {
@@ -239,9 +229,9 @@ bool CLandRegister::Del(const string &region, unsigned int id) {
                     }
                     n++;
                 }
-                pole.erase(pole.begin()+i);
-                break;
             }
+            pole.erase(pole.begin()+i);
+            break;
         }
 
     }
@@ -283,9 +273,9 @@ bool CLandRegister::Del(const string &city,const string &addr) {
                     }
                     n++;
                 }
-                pole.erase(pole.begin()+i);
-                break;
             }
+            pole.erase(pole.begin()+i);
+            break;
         }
     }
     for (unsigned long i = 0 ; i<=lastIdxPozemek;i++){
