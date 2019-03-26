@@ -293,6 +293,11 @@ bool CLandRegister::Del(const string &region, unsigned int id) {
 
 
     auto findTarget2 = lower_bound(pole2.begin(),pole2.end(), regId, compareRegionId);
+
+    if ((findTarget2 == pole2.end()) || (region < pole2[findTarget2-pole2.begin()]->region)){ // if not found ret false
+        return false;
+    }
+
     if (pole2[findTarget2-pole2.begin()]->region == region && pole2[findTarget2-pole2.begin()]->id== id) {
         SMestoUlice CityAddr;
         CityAddr.mesto=pole2[findTarget2 - pole2.begin()]->mesto;
@@ -341,6 +346,9 @@ bool CLandRegister::Del(const string &city,const string &addr) {
 
     auto findTarget = lower_bound(pole.begin(),pole.end(), CityAddr, compareCityAddr);
 
+    if ((findTarget == pole.end()) || (city < pole[findTarget-pole.begin()]->mesto)){
+        return false;
+    }
     if (pole[findTarget-pole.begin()]->mesto == city && pole[findTarget-pole.begin()]->ulice== addr) {
         SRegionId RegId;
         RegId.region=pole[findTarget - pole.begin()]->region;
@@ -363,8 +371,6 @@ bool CLandRegister::Del(const string &city,const string &addr) {
                 break;
             }
         }
-
-
         pole2.erase(findTarget2);
         delete pole[findTarget-pole.begin()];
         pole.erase(findTarget);
@@ -387,6 +393,9 @@ bool CLandRegister::GetOwner(const string &city, const string &addr, string &own
     tmp.ulice=addr;
 
     auto it = lower_bound(pole.begin(), pole.end(), tmp, compareCityAddr);
+    if ((it == pole.end()) || (city < pole[it-pole.begin()]->mesto)){
+        return false;
+    }
     if(pole[it-pole.begin()]->mesto==city && pole[it-pole.begin()]->ulice == addr){
         if(pole[it-pole.begin()]->majitel.empty()){
             owner.clear();
@@ -408,7 +417,9 @@ bool CLandRegister::GetOwner(const string &region, unsigned int id, string &owne
     tmp.id=id;
 
     auto it = lower_bound(pole2.begin(), pole2.end(), tmp, compareRegionId);
-
+    if ((it == pole2.end()) || (region < pole2[it-pole2.begin()]->region)){
+        return false;
+    }
     if(pole2[it-pole2.begin()]->region == region && pole2[it-pole2.begin()]->id==id){
         if(pole2[it-pole2.begin()]->majitel.empty()){
             owner.clear();
@@ -445,7 +456,7 @@ bool CLandRegister::NewOwner(const string &region, unsigned int id, const string
         cout << "nenaslo se co se melo" << endl;
         return false;
     }else{ // found the vector of the old owner.. find exact , delete
-        for(int i = 0; i<ownerPole[targetPrevOwner-ownerPole.begin()].size() ; i++){
+        for(long unsigned int i = 0; i<ownerPole[targetPrevOwner-ownerPole.begin()].size() ; i++){
             if(ownerPole[targetPrevOwner-ownerPole.begin()][i]->region==region && ownerPole[targetPrevOwner-ownerPole.begin()][i]->id==id) {// got the old owner, delete, if vector empty delete it too
                 ownerPole[targetPrevOwner-ownerPole.begin()].erase(ownerPole[targetPrevOwner-ownerPole.begin()].begin() + i);
                 if(ownerPole[targetPrevOwner-ownerPole.begin()].empty()){
@@ -494,7 +505,7 @@ bool CLandRegister::NewOwner(const string &city, const string &addr, const strin
         cout << "nenaslo se co se melo" << endl;
         return false;
     }else{ // found the vector of the old owner.. find exact , delete
-        for(int i = 0; i<ownerPole[targetPrevOwner-ownerPole.begin()].size() ; i++){
+        for(long unsigned int i = 0; i<ownerPole[targetPrevOwner-ownerPole.begin()].size() ; i++){
             if(ownerPole[targetPrevOwner-ownerPole.begin()][i]->mesto==city && ownerPole[targetPrevOwner-ownerPole.begin()][i]->ulice==addr) {// got the old owner, delete, if vector empty delete it too
                 ownerPole[targetPrevOwner-ownerPole.begin()].erase(ownerPole[targetPrevOwner-ownerPole.begin()].begin() + i);
                 if(ownerPole[targetPrevOwner-ownerPole.begin()].empty()){
@@ -567,12 +578,28 @@ static void test0(void) {
     CLandRegister x;
     string owner;
 
-/*    assert (x.Add("Prague", "Thakurova", "Dejvice", 12345));
+
+    assert (!x.Del("Librec", 4552));
+    assert (!x.Del("Librec", 4552));
+    assert (!x.Del("Librec", 4552));
+    assert (!x.NewOwner("Tklppabprnmcca", 737869, "Michal Dvorak"));
+    assert (x.Add("Prague", "Thakurova", "Dejvice", 12345));
+    assert (!x.Add("Prague", "Thakurova", "Dejvice", 12345));
+    assert (!x.Add("Prague", "Thakurova", "Dejvice", 12345));
+    assert (!x.Add("Prague", "Thakurova", "Dejvice", 12345));
+
     assert (x.Add("Prague", "Evropska", "Vokovice", 12345));
     assert (x.Add("Prague", "Technicka", "Dejvice", 9873));
     assert (x.Add("Plzen", "Evropska", "Plzen mesto", 78901));
     assert (x.Add("Liberec", "Evropska", "Librec", 4552));
-    assert (x.Del("Liberec", "Evropska"));
+
+    assert(x.Add("", "", "", 0);
+    assert(x.NewOwner("", "", "new"));
+    assert(x.GetOwner("", "", owner) && owner== "new");
+    assert(x.NewOwner("", "", ""));
+    assert(x.GetOwner("", "", owner) && owner== "");
+    assert(x.Del ("",0));
+/*    assert (x.Del("Liberec", "Evropska"));
     assert (x.Add("Liberec", "Evropska", "Librec", 4552));
     assert (x.Del("Librec", 4552));
     assert (x.Add("Liberec", "Evropska", "Librec", 4552));
