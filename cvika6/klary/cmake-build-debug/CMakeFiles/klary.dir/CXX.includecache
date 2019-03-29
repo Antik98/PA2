@@ -1,0 +1,69 @@
+<<<<<<< HEAD:cvika6/klary/cmake-build-debug/CMakeFiles/klary.dir/CXX.includecache
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/users/p/phamducm/PA2/cvika6/klary/main.cpp
+iostream
+-
+string
+-
+sstream
+-
+set
+-
+vector
+-
+algorithm
+-
+map
+-
+unordered_set
+-
+cassert
+-
+
+=======
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/CVUT FIT/PA2/progtest2/main.cpp
+cstring
+-
+cstdlib
+-
+cstdio
+-
+cctype
+-
+cmath
+-
+cassert
+-
+iostream
+-
+iomanip
+-
+string
+-
+vector
+-
+list
+-
+algorithm
+-
+functional
+-
+memory
+-
+
+>>>>>>> 7f02fea69e6fb3e7c4b20b5e64f17961c7ab254b:progtest2/cmake-build-debug/CMakeFiles/progtest2.dir/CXX.includecache
