@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/users/p/phamducm/PA2/cvika6/Chludil/Povolani.h
+iostream
+-
+string
+-
+
+/home/users/p/phamducm/PA2/cvika6/Chludil/main.cpp
+Povolani.h
+/home/users/p/phamducm/PA2/cvika6/Chludil/Povolani.h
+Zved.h
+/home/users/p/phamducm/PA2/cvika6/Chludil/Zved.h
+Valecnik.h
+/home/users/p/phamducm/PA2/cvika6/Chludil/Valecnik.h
+Alchymista.h
+/home/users/p/phamducm/PA2/cvika6/Chludil/Alchymista.h
+Carodej.h
+/home/users/p/phamducm/PA2/cvika6/Chludil/Carodej.h
+Mag.h
+/home/users/p/phamducm/PA2/cvika6/Chludil/Mag.h
+Hranicar.h
+/home/users/p/phamducm/PA2/cvika6/Chludil/Hranicar.h
+Lupic.h
+/home/users/p/phamducm/PA2/cvika6/Chludil/Lupic.h
+Druid.h
+/home/users/p/phamducm/PA2/cvika6/Chludil/Druid.h
+Saman.h
+/home/users/p/phamducm/PA2/cvika6/Chludil/Saman.h
+Vedmak.h
+/home/users/p/phamducm/PA2/cvika6/Chludil/Vedmak.h
+iostream
+-
+
