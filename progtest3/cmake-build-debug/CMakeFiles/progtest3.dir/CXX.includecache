@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/David/Documents/PA2/progtest3/main.cpp
+cstring
+-
+cstdlib
+-
+cstdio
+-
+cctype
+-
+ctime
+-
+climits
+-
+cmath
+-
+cassert
+-
+iostream
+-
+iomanip
+-
+sstream
+-
+string
+-
+vector
+-
+list
+-
+algorithm
+-
+functional
+-
+memory
+-
+
