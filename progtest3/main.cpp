@@ -300,13 +300,13 @@ bool CRangeList::Includes( const CRange tmp) const {
     return false;
 }
 
-CRangeList operator + (const CRange first, const CRange second) const {
+CRangeList operator + (const CRange first, const CRange second) {
     CRangeList tmp;
     tmp.pole.push_back(first);
     tmp += second;
     return tmp;
 }
-CRangeList operator - (const CRange first, const CRange second) const {
+CRangeList operator - (const CRange first, const CRange second)  {
     CRangeList tmp;
     tmp.pole.push_back(first);
     tmp -= second;
@@ -344,27 +344,31 @@ CRangeList& CRangeList::operator-=(const CRangeList tmp) {
 }
 
 CRangeList CRangeList::operator+(const CRange tmp) const {
-    *this += tmp;
-    return *this;
+    CRangeList tmpList = *this;
+    tmpList += tmp;
+    return tmpList;
 }
 
 CRangeList CRangeList::operator+(const  CRangeList tmp) const {
+    CRangeList tmpList = *this;
     for(auto it = tmp.pole.begin(); it < tmp.pole.end(); it++){
-        *this += *it;
+        tmpList += *it;
     }
-    return *this;
+    return tmpList;
 }
 
 CRangeList CRangeList::operator-(const CRange tmp) const {
-    *this -= tmp;
-    return *this;
+    CRangeList tmpList = *this;
+    tmpList -= tmp;
+    return tmpList;
 }
 
 CRangeList CRangeList::operator-( const CRangeList tmp) const {
+    CRangeList tmpList = *this;
     for(auto it = tmp.pole.begin(); it < tmp.pole.end(); it++){
-        *this -= *it;
+        tmpList -= *it;
     }
-    return *this;
+    return tmpList;
 }
 
 CRangeList CRangeList::operator=(const CRange tmp) {

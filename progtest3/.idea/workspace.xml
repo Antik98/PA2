@@ -12,200 +12,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef393b03-c612-4f10-b6f4-985df68edfeb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/.idea/cvika1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/.idea/DruhaUloha.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/.idea/dictionaries/David.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/DruhaUloha.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/DruhaUloha.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/DruhaUloha.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/DruhaUloha.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/DruhaUloha.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/DruhaUloha.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/DruhaUloha.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/DruhaUloha.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/DruhaUloha.dir/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/DruhaUloha.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/DruhaUloha" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/DruhaUloha.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/DruhaUloha/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/.idea/PrvniUloha.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/PrvniUloha.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/PrvniUloha.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/PrvniUloha.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/PrvniUloha.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/PrvniUloha.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/PrvniUloha.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/PrvniUloha.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/PrvniUloha.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/PrvniUloha.dir/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/PrvniUloha.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/PrvniUloha" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/PrvniUloha.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/PrvniUloha/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/.idea/tretiUloha.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/tretiUloha.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/tretiUloha.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/tretiUloha.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/tretiUloha.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/tretiUloha.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/tretiUloha.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/tretiUloha.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/tretiUloha.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/tretiUloha.dir/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/CMakeFiles/tretiUloha.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/tretiUloha" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/cmake-build-debug/tretiUloha.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika1/Klary/tretiUloha/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/benhauer/Zadani/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/benhauer/Zadani/src/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/benhauer/Zadani/teorie.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/benhauer/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/benhauer/benhauer.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/benhauer/datePrint.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/benhauer/uloha" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/.idea/klary.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/Member.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/Member.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/clan.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/3.12.1/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/3.12.1/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/3.12.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/3.12.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/3.12.1/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/3.12.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/3.12.1/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/3.12.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/3.12.1/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/klary.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/klary.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/klary.dir/Member.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/klary.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/klary.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/klary.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/klary.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/klary.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/klary.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/klary.dir/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/klary.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/klary" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/cmake-build-debug/klary.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cvika2/klary/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../progtest1/priprava.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progtest3.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progtest3.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progtest3.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progtest3.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progtest3.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progtest3.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progtest3.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progtest3.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progtest3.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progtest3.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/progtest3" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/progtest3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/progtest3.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/progtest3.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -228,11 +61,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="114" column="42" lean-forward="true" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="42" />
+            <state relative-caret-position="268">
+              <caret line="348" column="19" lean-forward="true" selection-start-line="348" selection-start-column="19" selection-end-line="348" selection-end-column="19" />
               <folding>
                 <element signature="e#21#39#0" expanded="true" />
-                <element signature="e#16591#16969#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -241,7 +73,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
+            <state relative-caret-position="22776">
               <caret line="1898" selection-start-line="1898" selection-end-line="1898" />
             </state>
           </provider>
@@ -280,7 +112,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
@@ -319,17 +153,18 @@
       <workItem from="1553866101223" duration="3185000" />
       <workItem from="1553891585191" duration="14664000" />
       <workItem from="1553945695312" duration="10893000" />
+      <workItem from="1553966307385" duration="800000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31409000" />
+    <option name="totallyTimeSpent" value="32209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.112277865" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.113893375" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -374,18 +209,17 @@
     </entry>
     <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
+        <state relative-caret-position="22776">
           <caret line="1898" selection-start-line="1898" selection-end-line="1898" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="114" column="42" lean-forward="true" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="42" />
+        <state relative-caret-position="268">
+          <caret line="348" column="19" lean-forward="true" selection-start-line="348" selection-start-column="19" selection-end-line="348" selection-end-column="19" />
           <folding>
             <element signature="e#21#39#0" expanded="true" />
-            <element signature="e#16591#16969#0" expanded="true" />
           </folding>
         </state>
       </provider>
