@@ -45,23 +45,23 @@ class CRangeList
 {
 public:
     CRangeList(){};
-    bool Includes(const long long int);
-    bool Includes(const CRange);
-    CRangeList operator +=(CRange);
-    CRangeList operator +=(CRangeList);
-    CRangeList operator -=(CRange);
-    CRangeList operator -=(CRangeList);
-    CRangeList operator =(CRange);
-    CRangeList operator =(CRangeList);
-    CRangeList operator +(CRange);
-    CRangeList operator +(CRangeList);
-    CRangeList operator -(CRange);
-    CRangeList operator -(CRangeList);
+    bool Includes(const long long int) const;
+    bool Includes(const CRange) const;
+    CRangeList& operator +=(const CRange);
+    CRangeList& operator +=(const CRangeList);
+    CRangeList& operator -=(const CRange);
+    CRangeList& operator -=(const CRangeList);
+    CRangeList operator =(const CRange);
+    CRangeList operator =(const CRangeList);
+    CRangeList operator +(const CRange) const;
+    CRangeList operator +(const CRangeList) const;
+    CRangeList operator -(const CRange) const;
+    CRangeList operator -(const CRangeList) const;
 
-    bool operator ==(CRangeList&);
-    bool operator !=(CRangeList&);
-    friend CRangeList operator + (CRange first, CRange second);
-    friend CRangeList operator - (CRange first, CRange second);
+    bool operator ==(const CRangeList&) const;
+    bool operator !=(const CRangeList&) const;
+    friend CRangeList operator + (const CRange first, const CRange second);
+    friend CRangeList operator - (const CRange first, const CRange second);
     friend const ostringstream& operator<<(ostringstream& os, const CRangeList& list);
 
 private:
@@ -82,7 +82,8 @@ bool findRangeNum(CRange first, long long int second){
     return (first.lo<second);
 }
 
-CRangeList CRangeList::operator+=(class CRange range) {
+CRangeList& CRangeList::operator+=(const class CRange origrange) {
+    CRange range = origrange;
     if(this->pole.empty()){
         pole.push_back(range);
     }else {
@@ -168,15 +169,22 @@ CRangeList CRangeList::operator+=(class CRange range) {
     return *this;
 }
 
-CRangeList CRangeList::operator-=(CRange range) {
+CRangeList& CRangeList::operator-=(const CRange origrange) {
+    CRange range = origrange;
     if(this->pole.empty()){
 
     }else{
         auto it = lower_bound(pole.begin(), pole.end(), range, compareRangeLo);
+        auto prevIt = it;
+        if(it!=pole.begin()){
+            prevIt = prevIt - 1;
+        }
+
+        
         if (it == pole.begin()){
-            if((it-1)->lo< range.lo && (it-1)->hi > range.hi){
-                CRange tmp(range.hi+1, (it-1)->hi);
-                (it-1)->hi=range.lo-1;
+            if(prevIt->lo< range.lo && prevIt->hi > range.hi){
+                CRange tmp(range.hi+1, prevIt->hi);
+                prevIt->hi=range.lo-1;
                 pole.insert(it,tmp);
             }else {
 
@@ -192,13 +200,13 @@ CRangeList CRangeList::operator-=(CRange range) {
                 }
             }
         }else if(it == pole.end()){ // at the back checks if overlaps with the one before it
-            if((it-1)->lo< range.lo && (it-1)->hi > range.hi){
-                CRange tmp(range.hi+1, (it-1)->hi);
-                (it-1)->hi=range.lo-1;
+            if(prevIt->lo< range.lo && prevIt->hi > range.hi){
+                CRange tmp(range.hi+1, prevIt->hi);
+                prevIt->hi=range.lo-1;
                 pole.insert(it,tmp);
             }else {
 
-                for (auto findLoBorder = it - 1; findLoBorder >= pole.begin(); findLoBorder--) {
+                for (auto findLoBorder = prevIt; findLoBorder >= pole.begin(); findLoBorder--) {
                     if (findLoBorder->hi < range.lo) { // doesnt colide with this one
                         break;
                     } else if (findLoBorder->hi >= range.lo && findLoBorder->lo >= range.lo) { // engulf this one
@@ -211,14 +219,14 @@ CRangeList CRangeList::operator-=(CRange range) {
                 }
             }
         }else{
-            if(range .lo > (it-1)->hi && range.hi < it->lo){// it fits between two intervals without merging, simple
+            if(range .lo > prevIt->hi && range.hi < it->lo){// it fits between two intervals without merging, simple
 
-            }else if((it-1)->lo< range.lo && (it-1)->hi > range.hi){
-                CRange tmp(range.hi+1, (it-1)->hi);
-                (it-1)->hi=range.lo-1;
+            }else if(prevIt->lo< range.lo && prevIt->hi > range.hi){
+                CRange tmp(range.hi+1, prevIt->hi);
+                prevIt->hi=range.lo-1;
                 pole.insert(it,tmp);
             }else{ // first extend the lo, then hi
-                    for( auto findLoBorder = it-1; findLoBorder>=pole.begin(); findLoBorder--){
+                    for( auto findLoBorder = prevIt; findLoBorder>=pole.begin(); findLoBorder--){
                         if (findLoBorder->hi < range.lo){ // doesnt colide with this one
                             break;
                         }else if(findLoBorder->hi >= range.lo && findLoBorder->lo >= range.lo ){ // engulf this one
@@ -247,7 +255,7 @@ CRangeList CRangeList::operator-=(CRange range) {
     return *this;
 }
 
-bool CRangeList::Includes( const long long int tmp) {
+bool CRangeList::Includes( const long long int tmp) const {
     if (pole.empty()){
         return false;
     }
@@ -261,7 +269,7 @@ bool CRangeList::Includes( const long long int tmp) {
     return false;
 }
 
-bool CRangeList::Includes( const CRange tmp)  {
+bool CRangeList::Includes( const CRange tmp) const {
     if (pole.empty()){
         return false;
     }
@@ -289,15 +297,16 @@ bool CRangeList::Includes( const CRange tmp)  {
         }
         return false;
     }
+    return false;
 }
 
-CRangeList operator + (CRange first, CRange second){
+CRangeList operator + (const CRange first, const CRange second) const {
     CRangeList tmp;
     tmp.pole.push_back(first);
     tmp += second;
     return tmp;
 }
-CRangeList operator - (CRange first, CRange second){
+CRangeList operator - (const CRange first, const CRange second) const {
     CRangeList tmp;
     tmp.pole.push_back(first);
     tmp -= second;
@@ -306,7 +315,7 @@ CRangeList operator - (CRange first, CRange second){
 
 const ostringstream& operator<<(ostringstream& os, const CRangeList& list) {
     os<<"{";
-    for(int i = 0 ; i < list.pole.size(); i++){
+    for(unsigned int i = 0 ; i < list.pole.size(); i++){
         if(list.pole.at(i).lo == list.pole.at(i).hi){
             os<< list.pole.at(i).lo;
         }else{
@@ -320,51 +329,51 @@ const ostringstream& operator<<(ostringstream& os, const CRangeList& list) {
     return os;
 }
 
-CRangeList CRangeList::operator+=(CRangeList tmp) {
+CRangeList& CRangeList::operator+=(const CRangeList tmp) {
     for(auto it = tmp.pole.begin(); it < tmp.pole.end(); it++){
         *this += *it;
     }
     return *this;
 }
 
-CRangeList CRangeList::operator-=(CRangeList tmp) {
+CRangeList& CRangeList::operator-=(const CRangeList tmp) {
     for(auto it = tmp.pole.begin(); it < tmp.pole.end(); it++){
         *this -= *it;
     }
     return *this;
 }
 
-CRangeList CRangeList::operator+(CRange tmp) {
+CRangeList CRangeList::operator+(const CRange tmp) const {
     *this += tmp;
     return *this;
 }
 
-CRangeList CRangeList::operator+(CRangeList tmp) {
+CRangeList CRangeList::operator+(const  CRangeList tmp) const {
     for(auto it = tmp.pole.begin(); it < tmp.pole.end(); it++){
         *this += *it;
     }
     return *this;
 }
 
-CRangeList CRangeList::operator-(CRange tmp) {
+CRangeList CRangeList::operator-(const CRange tmp) const {
     *this -= tmp;
     return *this;
 }
 
-CRangeList CRangeList::operator-(CRangeList tmp) {
+CRangeList CRangeList::operator-( const CRangeList tmp) const {
     for(auto it = tmp.pole.begin(); it < tmp.pole.end(); it++){
         *this -= *it;
     }
     return *this;
 }
 
-CRangeList CRangeList::operator=(CRange tmp) {
+CRangeList CRangeList::operator=(const CRange tmp) {
     pole.clear();
     pole.push_back(tmp);
     return *this;
 }
 
-CRangeList CRangeList::operator=(CRangeList tmp) {
+CRangeList CRangeList::operator=(const CRangeList tmp) {
     pole.clear();
     for(auto it = tmp.pole.begin(); it<tmp.pole.end(); it++){
         pole.push_back(*it);
@@ -372,7 +381,7 @@ CRangeList CRangeList::operator=(CRangeList tmp) {
     return *this;
 }
 
-bool CRangeList::operator==(CRangeList &tmp) {
+bool CRangeList::operator==(const CRangeList &tmp) const {
     if(pole.size()!=tmp.pole.size()){
         return false;
     }
@@ -384,7 +393,7 @@ bool CRangeList::operator==(CRangeList &tmp) {
     return true;
 }
 
-bool CRangeList::operator!=(CRangeList &tmp) {
+bool CRangeList::operator!=(const CRangeList &tmp) const {
     if(pole.size()!=tmp.pole.size()){
         return true;
     }
