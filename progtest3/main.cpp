@@ -111,18 +111,27 @@ CRangeList& CRangeList::operator+=(const class CRange origrange) {
             }
             pole.insert(it, range);
        }else if (it == pole.end()){
-            if((it-1)->hi>range.lo || (it-1)->hi+1 == range.lo){ // engulfs the one before it
-                if((it-1)->hi < range.hi){
-                    (it-1)->hi = range.hi;
+            auto prevIt = it;
+            if(it!=pole.begin()){
+                prevIt = prevIt - 1;
+            }
+
+            if((prevIt)->hi>range.lo || (prevIt)->hi+1 == range.lo){ // engulfs the one before it
+                if((prevIt)->hi < range.hi){
+                    (prevIt)->hi = range.hi;
                 }
             }else{
                 pole.insert(it,range);
             }
        }else{
-            if(range .lo  > (it-1)->hi + 1 && range.hi  < it->lo -1) // it fits between two intervals without merging, simple
+            auto prevIt = it;
+            if(it!=pole.begin()){
+                prevIt = prevIt - 1;
+            }
+            if(range .lo  > prevIt->hi + 1 && range.hi  < it->lo -1) // it fits between two intervals without merging, simple
                 pole.insert(it, range);
             else{ // first extend the lo, then hi
-                for( auto findLoBorder = it-1; findLoBorder>=pole.begin(); findLoBorder--){
+                for( auto findLoBorder = prevIt; findLoBorder>=pole.begin(); findLoBorder--){
                     //todo could overflow
                     if (findLoBorder->hi+1 < range.lo){ // doesnt colide with this one
                         break;
@@ -259,11 +268,17 @@ bool CRangeList::Includes( const long long int tmp) const {
     if (pole.empty()){
         return false;
     }
+
     auto it = lower_bound(pole.begin(), pole.end(), tmp, findRangeNum);
+
+    auto prevIt = it;
+    if(it!=pole.begin()){
+        prevIt = prevIt - 1;
+    }
     if(it == pole.begin()){
         return false;
     }
-    if ((it-1)->hi >= tmp || it->lo== tmp){
+    if (prevIt->hi >= tmp || it->lo== tmp){
         return true;
     }
     return false;
@@ -282,17 +297,22 @@ bool CRangeList::Includes( const CRange tmp) const {
     }
 
     auto it = lower_bound(pole.begin(), pole.end(), tmp, compareRangeLo);
+    auto prevIt = it;
+    if(it!=pole.begin()){
+        prevIt = prevIt - 1;
+    }
+
     if (it== pole.begin()){ // dont know if this is necessary, pretty much if it reaches begin should be false
         if(it->lo>tmp.lo){
             return false;
         }
     }else if(it == pole.end()){
-        if((it-1)->lo < tmp.lo && (it-1)->hi > tmp.hi){
+        if((prevIt)->lo < tmp.lo && (prevIt)->hi > tmp.hi){
             return true;
         }
         return false;
     }else{
-        if((it-1)->lo < tmp.lo && (it-1)->hi > tmp.hi){
+        if((prevIt)->lo < tmp.lo && (prevIt)->hi > tmp.hi){
             return true;
         }
         return false;
