@@ -275,10 +275,8 @@ bool CRangeList::Includes( const long long int tmp) const {
     if(it!=pole.begin()){
         prevIt = prevIt - 1;
     }
-    if(it == pole.begin()){
-        return false;
-    }
-    if (prevIt->hi >= tmp || it->lo== tmp){
+
+    if (prevIt->hi >= tmp || it->lo<= tmp){
         return true;
     }
     return false;
@@ -441,7 +439,6 @@ string             toString                                ( const CRangeList& x
 int                main                                    ( void )
 {
     CRangeList a, b;
-
 
     assert ( sizeof ( CRange ) <= 2 * sizeof ( long long ) );
     a = CRange ( 5, 10 );

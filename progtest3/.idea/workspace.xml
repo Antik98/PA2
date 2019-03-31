@@ -12,7 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef393b03-c612-4f10-b6f4-985df68edfeb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progtest3.dir/main.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
@@ -37,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-385">
-              <caret line="307" column="9" lean-forward="true" selection-start-line="307" selection-start-column="9" selection-end-line="307" selection-end-column="9" />
+            <state relative-caret-position="112">
+              <caret line="440" column="20" selection-start-line="440" selection-start-column="20" selection-end-line="440" selection-end-column="20" />
               <folding>
                 <element signature="e#21#39#0" expanded="true" />
               </folding>
@@ -63,6 +62,7 @@
       <find>c</find>
       <find>-1</find>
       <find>it-1</find>
+      <find>prev</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,12 +133,12 @@
       <workItem from="1553891585191" duration="14664000" />
       <workItem from="1553945695312" duration="10893000" />
       <workItem from="1553966307385" duration="1263000" />
-      <workItem from="1554035545821" duration="760000" />
+      <workItem from="1554035545821" duration="1473000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33432000" />
+    <option name="totallyTimeSpent" value="34145000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
@@ -150,7 +150,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3293944" />
-      <window_info active="true" anchor="bottom" x="-780" y="-219" width="748" height="958" id="Debug" order="3" visible="true" weight="0.044313148" />
+      <window_info active="true" anchor="bottom" x="-780" y="-219" width="748" height="958" id="Debug" order="3" visible="true" weight="0.28803545" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -174,8 +174,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>446</line>
-          <option name="timeStamp" value="1" />
+          <line>486</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>440</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -207,8 +212,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-385">
-          <caret line="307" column="9" lean-forward="true" selection-start-line="307" selection-start-column="9" selection-end-line="307" selection-end-column="9" />
+        <state relative-caret-position="112">
+          <caret line="440" column="20" selection-start-line="440" selection-start-column="20" selection-end-line="440" selection-end-column="20" />
           <folding>
             <element signature="e#21#39#0" expanded="true" />
           </folding>
