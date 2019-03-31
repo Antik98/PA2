@@ -64,8 +64,8 @@ public:
     friend CRangeList operator - (const CRange first, const CRange second);
     friend const ostringstream& operator<<(ostringstream& os, const CRangeList& list);
 
-private:
     vector<CRange> pole;
+private:
 };
 
 bool compareRangeLo(CRange first, CRange second){
@@ -88,7 +88,9 @@ CRangeList& CRangeList::operator+=(const class CRange origrange) {
         pole.push_back(range);
     }else {
         auto it = lower_bound(pole.begin(), pole.end(), range, compareRangeLo);
-
+        if (it->lo == range.lo && it->hi == range.hi){
+            return *this;
+        }
         if (it == pole.begin()) {
 
             for (auto findHiBorder = it; findHiBorder < pole.end(); ++findHiBorder) {
@@ -115,6 +117,7 @@ CRangeList& CRangeList::operator+=(const class CRange origrange) {
             if(it!=pole.begin()){
                 prevIt = prevIt - 1;
             }
+
 
             if((prevIt)->hi>range.lo || (prevIt)->hi+1 == range.lo){ // engulfs the one before it
                 if((prevIt)->hi < range.hi){
@@ -180,17 +183,22 @@ CRangeList& CRangeList::operator+=(const class CRange origrange) {
 
 CRangeList& CRangeList::operator-=(const CRange origrange) {
     CRange range = origrange;
+    bool shifted = false;
     if(this->pole.empty()){
 
     }else{
         auto it = lower_bound(pole.begin(), pole.end(), range, compareRangeLo);
-        auto prevIt = it;
-        if(it!=pole.begin()){
-            prevIt = prevIt - 1;
+        if (it == pole.end()){
+            it = it -1;
+            shifted=true;
         }
 
+        auto prevIt = it;
+        if(it!=pole.begin()&& !shifted){
+            prevIt = prevIt - 1;
+        }
         
-        if (it == pole.begin()){
+        if (it == pole.begin() && !shifted){
             if(prevIt->lo< range.lo && prevIt->hi > range.hi){
                 CRange tmp(range.hi+1, prevIt->hi);
                 prevIt->hi=range.lo-1;
@@ -200,11 +208,12 @@ CRangeList& CRangeList::operator-=(const CRange origrange) {
                 for (auto findHiBorder = it; findHiBorder < pole.end(); findHiBorder++) {
                     if (range.hi < findHiBorder->lo) { // doesnt touch the next one, break
                         break;
-                    } else if (range.hi >= findHiBorder->lo && range.hi >= findHiBorder->hi) {// engulfs it
+                    } else if (range.lo <= findHiBorder->lo && range.hi >= findHiBorder->hi) {// engulfs it
                         pole.erase(findHiBorder);
                         findHiBorder--;
                     } else { // collides with one
                         findHiBorder->lo = range.hi + 1;
+                        break;
                     }
                 }
             }
@@ -212,7 +221,10 @@ CRangeList& CRangeList::operator-=(const CRange origrange) {
             if(prevIt->lo< range.lo && prevIt->hi > range.hi){
                 CRange tmp(range.hi+1, prevIt->hi);
                 prevIt->hi=range.lo-1;
-                pole.insert(it,tmp);
+                if(shifted)
+                    pole.insert(it+1,tmp);
+                else
+                    pole.insert(it,tmp);
             }else {
 
                 for (auto findLoBorder = prevIt; findLoBorder >= pole.begin(); findLoBorder--) {
@@ -233,7 +245,10 @@ CRangeList& CRangeList::operator-=(const CRange origrange) {
             }else if(prevIt->lo< range.lo && prevIt->hi > range.hi){
                 CRange tmp(range.hi+1, prevIt->hi);
                 prevIt->hi=range.lo-1;
-                pole.insert(it,tmp);
+                if(shifted)
+                    pole.insert(it+1,tmp);
+                else
+                    pole.insert(it,tmp);
             }else{ // first extend the lo, then hi
                     for( auto findLoBorder = prevIt; findLoBorder>=pole.begin(); findLoBorder--){
                         if (findLoBorder->hi < range.lo){ // doesnt colide with this one
@@ -246,6 +261,8 @@ CRangeList& CRangeList::operator-=(const CRange origrange) {
                             break;
                         }
                     }
+                    if (shifted)
+                        return *this;
 
                     for (auto findHiBorder = it ; findHiBorder<pole.end();findHiBorder++){
                         if(range.hi < findHiBorder->lo){ // doesnt touch the next one, break
@@ -268,15 +285,22 @@ bool CRangeList::Includes( const long long int tmp) const {
     if (pole.empty()){
         return false;
     }
+    bool shifted = false;
 
     auto it = lower_bound(pole.begin(), pole.end(), tmp, findRangeNum);
-
-    auto prevIt = it;
-    if(it!=pole.begin()){
-        prevIt = prevIt - 1;
+    if (it == pole.end()){
+        it = it -1;
+        shifted = true;
     }
 
-    if (prevIt->hi >= tmp || it->lo<= tmp){
+    auto prevIt = it;
+    if(it!=pole.begin() && !shifted){
+        prevIt = prevIt - 1;
+        if(prevIt->hi >= tmp)
+            return true;
+    }
+
+    if (it->lo<= tmp && it->hi >= tmp){
         return true;
     }
     return false;
@@ -295,22 +319,21 @@ bool CRangeList::Includes( const CRange tmp) const {
     }
 
     auto it = lower_bound(pole.begin(), pole.end(), tmp, compareRangeLo);
+    if (it == pole.end()){
+        it = it -1;
+    }
     auto prevIt = it;
     if(it!=pole.begin()){
         prevIt = prevIt - 1;
     }
 
-    if (it== pole.begin()){ // dont know if this is necessary, pretty much if it reaches begin should be false
-        if(it->lo>tmp.lo){
-            return false;
-        }
-    }else if(it == pole.end()){
-        if((prevIt)->lo < tmp.lo && (prevIt)->hi > tmp.hi){
+    if(it == pole.end()){
+        if((prevIt)->lo <= tmp.lo && (prevIt)->hi >= tmp.hi){
             return true;
         }
         return false;
     }else{
-        if((prevIt)->lo < tmp.lo && (prevIt)->hi > tmp.hi){
+        if((prevIt)->lo <= tmp.lo && (prevIt)->hi >= tmp.hi){
             return true;
         }
         return false;
@@ -438,6 +461,7 @@ string             toString                                ( const CRangeList& x
 
 int                main                                    ( void )
 {
+
     CRangeList a, b;
 
     assert ( sizeof ( CRange ) <= 2 * sizeof ( long long ) );
@@ -503,6 +527,8 @@ int                main                                    ( void )
     assert ( toString ( b ) == "{<0..100>,<160..169>,<171..180>,<251..300>}" );
     b -= CRange ( 10, 90 ) - CRange ( 20, 30 ) - CRange ( 40, 50 ) - CRange ( 60, 90 ) + CRange ( 70, 80 );
     assert ( toString ( b ) == "{<0..9>,<20..30>,<40..50>,<60..69>,<81..100>,<160..169>,<171..180>,<251..300>}" );
+
+
 
 #ifdef EXTENDED_SYNTAX
     CRangeList x { { 5, 20 }, { 150, 200 }, { -9, 12 }, { 48, 93 } };
