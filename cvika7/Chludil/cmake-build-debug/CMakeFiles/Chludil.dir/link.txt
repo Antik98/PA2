@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Chludil.dir/main.cpp.o CMakeFiles/Chludil.dir/cshop.cpp.o  -o Chludil 
