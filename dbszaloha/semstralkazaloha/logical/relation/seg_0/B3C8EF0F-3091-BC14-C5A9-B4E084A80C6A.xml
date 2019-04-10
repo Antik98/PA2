@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_6" directorySegmentName="seg_0" id="B3C8EF0F-3091-BC14-C5A9-B4E084A80C6A">
+<createdBy>phamducm</createdBy>
+<createdTime>2019-03-21 11:02:06 UTC</createdTime>
+<ownerDesignName>semstralkazaloha</ownerDesignName>
+<engineerTo>
+<item key="7B50ED91-2B6B-1496-91C1-82A6495B9FD0" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<nameOnTarget>vlozi do kosiku</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>22C726FD-0196-E855-1208-92BDC3798122</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>8E228F48-09DD-85CE-7C82-54C3FAB5FA77</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

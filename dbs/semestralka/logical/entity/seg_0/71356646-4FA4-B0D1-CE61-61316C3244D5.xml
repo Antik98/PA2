@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="71356646-4FA4-B0D1-CE61-61316C3244D5" name="Faktura">
+<createdBy>phamducm</createdBy>
+<createdTime>2019-03-21 10:55:26 UTC</createdTime>
+<ownerDesignName>semestralka</ownerDesignName>
+<engineerTo>
+<item key="7B50ED91-2B6B-1496-91C1-82A6495B9FD0" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="objednavka_id" id="079D6DBE-8B39-41A5-BB17-699A1C62C574">
+<createdBy>phamducm</createdBy>
+<createdTime>2019-03-21 11:04:30 UTC</createdTime>
+<generatorID>49FB5045-C5F5-017D-5BD3-2A02EA5156AF</generatorID>
+<ownerDesignName>semestralka</ownerDesignName>
+<engineerTo>
+<item key="7B50ED91-2B6B-1496-91C1-82A6495B9FD0" value="true"/>
+</engineerTo>
+<referedAttribute>7CC78956-82CB-8448-2832-D24A31BB6549</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="zakaznik_id" id="91A80BF0-B963-D47D-60BB-FEC7DBFA6FAE">
+<createdBy>phamducm</createdBy>
+<createdTime>2019-03-21 11:34:39 UTC</createdTime>
+<generatorID>49FB5045-C5F5-017D-5BD3-2A02EA5156AF</generatorID>
+<ownerDesignName>semestralka</ownerDesignName>
+<engineerTo>
+<item key="7B50ED91-2B6B-1496-91C1-82A6495B9FD0" value="true"/>
+</engineerTo>
+<referedAttribute>BE62E5F6-3A24-F2C7-3898-E367EF80F7E8</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>
