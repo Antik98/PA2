@@ -3,4 +3,4 @@ project(Chludil)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Chludil main.cpp)
+add_executable(Chludil main.cpp classes.h)

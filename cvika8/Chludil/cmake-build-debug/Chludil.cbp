@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/users/p/phamducm/PA2/cvika8/Chludil/classes.h">
+			<Option target="Chludil"/>
+		</Unit>
 		<Unit filename="/home/users/p/phamducm/PA2/cvika8/Chludil/main.cpp">
 			<Option target="Chludil"/>
 		</Unit>
