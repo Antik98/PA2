@@ -1,4 +1,5 @@
 #ifndef __PROGTEST__
+
 #include <cassert>
 #include <iostream>
 #include <iomanip>
@@ -11,89 +12,160 @@
 #include <algorithm>
 #include <memory>
 #include <functional>
-using namespace std;
 
-class CTimeStamp
-{
+using namespace std;
+int cmpInt(int a, int b){
+    return (a>b)-(a<b);
+}
+int cmpDouble(double a, double b){
+    return (a>b)-(a<b);
+}
+class CTimeStamp {
 public:
-    CTimeStamp                              ( int               year,
-                                              int               month,
-                                              int               day,
-                                              int               hour,
-                                              int               minute,
-                                              double            sec );
-    int            Compare                                 ( const CTimeStamp & x ) const;
-    friend ostream & operator <<                           ( ostream          & os,
-                                                             const CTimeStamp & x );
+    CTimeStamp(int year,
+               int month,
+               int day,
+               int hour,
+               int minute,
+               double sec) :year(year),month(month),day(day),hour(hour),minute(minute),sec(sec){};
+
+
+    int Compare(const CTimeStamp &x) const{
+        if((year == x.year) && (month == x.month) && (day == x.day) && (hour == x.hour) && (minute == x.minute) && (sec == x.sec))
+            return 0;
+
+        if(cmpInt(year,x.year))
+            return cmpInt(year,x.year);
+        if(cmpInt(month,x.month))
+            return cmpInt(month,x.month);
+        if(cmpInt(day,x.day))
+            return cmpInt(day,x.day);
+        if(cmpInt(hour,x.hour))
+            return cmpInt(hour,x.hour);
+        if(cmpInt(minute,x.minute))
+            return cmpInt(minute,x.minute);
+        if(cmpDouble(sec,x.sec))
+            return cmpDouble(sec,x.sec);
+
+
+        return 0;
+
+    };
+
+    friend ostream &operator<<(ostream &os,
+                               const CTimeStamp &x);
+
 private:
+    int year;
+    int month;
+    int day;
+    int hour;
+    int minute;
+    double sec;
 };
-class CMail
-{
+
+ostream &operator<<(ostream &os, const CTimeStamp &x) {
+    os << setfill('0') << setw(4) << x.year << "-"
+    << setfill('0') << setw(2) << x.month << "-"
+    << x.day << " "
+    << x.hour << ":"
+    << x.minute << ":"
+    << setprecision(3)<< x.sec;
+}
+
+class CMail {
 public:
-    CMail                                   ( const CTimeStamp & timeStamp,
-                                              const string     & from,
-                                              const string     & to,
-                                              const string     & subject );
-    int            CompareByTime                           ( const CTimeStamp & x ) const;
-    int            CompareByTime                           ( const CMail      & x ) const;
-    const string & From                                    ( void ) const;
-    const string & To                                      ( void ) const;
-    const string & Subject                                 ( void ) const;
-    const CTimeStamp & TimeStamp                           ( void ) const;
-    friend ostream & operator <<                           ( ostream          & os,
-                                                             const CMail      & x );
+    CMail(const CTimeStamp &timeStamp,
+          const string &from,
+          const string &to,
+          const string &subject)
+          :stamp(timeStamp), from(from),to(to), subject(subject) {}
+
+
+    int CompareByTime(const CTimeStamp &x) const{
+        return (stamp.Compare(x));
+    }
+
+    int CompareByTime(const CMail &x) const{
+        return (stamp.Compare(x.stamp));
+    }
+
+    const string &From(void) const{
+        return from;
+    }
+
+    const string &To(void) const{
+        return to;
+    }
+
+    const string &Subject(void) const{
+        return subject;
+    }
+
+    const CTimeStamp &TimeStamp(void) const{
+        return stamp;
+    }
+
+    friend ostream &operator<<(ostream &os,
+                               const CMail &x){
+        os << x.stamp << x.from << x.to << x.subject;
+    }
+
 private:
+    CTimeStamp stamp;
+    string from;
+    string to;
+    string subject;
 };
 // your code will be compiled in a separate namespace
 namespace MysteriousNamespace {
 #endif /* __PROGTEST__ */
+
 //----------------------------------------------------------------------------------------
-    class CMailLog
-    {
+    class CMailLog {
     public:
-        int            ParseLog                                ( istream          & in );
+        int ParseLog(istream &in);
 
-        list<CMail>    ListMail                                ( const CTimeStamp & from,
-                                                                 const CTimeStamp & to ) const;
+        list<CMail> ListMail(const CTimeStamp &from,
+                             const CTimeStamp &to) const;
 
-        set<string>    ActiveUsers                             ( const CTimeStamp & from,
-                                                                 const CTimeStamp & to ) const;
+        set<string> ActiveUsers(const CTimeStamp &from,
+                                const CTimeStamp &to) const;
+
     private:
         // todo
     };
 //----------------------------------------------------------------------------------------
 #ifndef __PROGTEST__
 } // namespace
-string             printMail                               ( const list<CMail> & all )
-{
+string printMail(const list<CMail> &all) {
     ostringstream oss;
-    for ( const auto & mail : all )
+    for (const auto &mail : all)
         oss << mail << endl;
-    return oss . str ();
+    return oss.str();
 }
-string             printUsers                              ( const set<string> & all )
-{
+
+string printUsers(const set<string> &all) {
     ostringstream oss;
     bool first = true;
-    for ( const auto & name : all )
-    {
-        if ( ! first )
+    for (const auto &name : all) {
+        if (!first)
             oss << ", ";
         else
             first = false;
         oss << name;
     }
-    return oss . str ();
+    return oss.str();
 }
-int                main                                    ( void )
-{
+
+int main(void) {
     MysteriousNamespace::CMailLog m;
     list<CMail> mailList;
     set<string> users;
     istringstream iss;
 
-    iss . clear ();
-    iss . str (
+    iss.clear();
+    iss.str(
             "Mar 29 2019 12:35:32.233 relay.fit.cvut.cz ADFger72343D: from=user1@fit.cvut.cz\n"
             "Mar 29 2019 12:37:16.234 relay.fit.cvut.cz JlMSRW4232Df: from=person3@fit.cvut.cz\n"
             "Mar 29 2019 12:55:13.023 relay.fit.cvut.cz JlMSRW4232Df: subject=New progtest homework!\n"
@@ -108,34 +180,36 @@ int                main                                    ( void )
             "Mar 29 2019 15:02:34.230 relay.fit.cvut.cz KhdfEjkl247D: to=CEO@fit.cvut.cz\n"
             "Mar 29 2019 15:02:34.230 relay.fit.cvut.cz KhdfEjkl247D: to=dean@fit.cvut.cz\n"
             "Mar 29 2019 15:02:34.230 relay.fit.cvut.cz KhdfEjkl247D: to=vice-dean@fit.cvut.cz\n"
-            "Mar 29 2019 15:02:34.230 relay.fit.cvut.cz KhdfEjkl247D: to=archive@fit.cvut.cz\n" );
-    assert ( m . ParseLog ( iss ) == 8 );
-    mailList = m . ListMail ( CTimeStamp ( 2019, 3, 28, 0, 0, 0 ),
-                              CTimeStamp ( 2019, 3, 29, 23, 59, 59 ) );
-    assert ( printMail ( mailList ) ==
-             "2019-03-29 13:36:13.023 person3@fit.cvut.cz -> user76@fit.cvut.cz, subject: New progtest homework!\n"
-             "2019-03-29 14:18:12.654 office13@fit.cvut.cz -> boss13@fit.cvut.cz, subject: \n"
-             "2019-03-29 14:58:32.000 PR-department@fit.cvut.cz -> HR-department@fit.cvut.cz, subject: Business partner\n"
-             "2019-03-29 15:02:34.230 PR-department@fit.cvut.cz -> CEO@fit.cvut.cz, subject: Business partner\n"
-             "2019-03-29 15:02:34.230 PR-department@fit.cvut.cz -> dean@fit.cvut.cz, subject: Business partner\n"
-             "2019-03-29 15:02:34.230 PR-department@fit.cvut.cz -> vice-dean@fit.cvut.cz, subject: Business partner\n"
-             "2019-03-29 15:02:34.230 PR-department@fit.cvut.cz -> archive@fit.cvut.cz, subject: Business partner\n"
-             "2019-03-29 15:02:34.231 PR-department@fit.cvut.cz -> CIO@fit.cvut.cz, subject: Business partner\n" );
-    mailList = m . ListMail ( CTimeStamp ( 2019, 3, 28, 0, 0, 0 ),
-                              CTimeStamp ( 2019, 3, 29, 14, 58, 32 ) );
-    assert ( printMail ( mailList ) ==
-             "2019-03-29 13:36:13.023 person3@fit.cvut.cz -> user76@fit.cvut.cz, subject: New progtest homework!\n"
-             "2019-03-29 14:18:12.654 office13@fit.cvut.cz -> boss13@fit.cvut.cz, subject: \n"
-             "2019-03-29 14:58:32.000 PR-department@fit.cvut.cz -> HR-department@fit.cvut.cz, subject: Business partner\n" );
-    mailList = m . ListMail ( CTimeStamp ( 2019, 3, 30, 0, 0, 0 ),
-                              CTimeStamp ( 2019, 3, 30, 23, 59, 59 ) );
-    assert ( printMail ( mailList ) == "" );
-    users = m . ActiveUsers ( CTimeStamp ( 2019, 3, 28, 0, 0, 0 ),
-                              CTimeStamp ( 2019, 3, 29, 23, 59, 59 ) );
-    assert ( printUsers ( users ) == "CEO@fit.cvut.cz, CIO@fit.cvut.cz, HR-department@fit.cvut.cz, PR-department@fit.cvut.cz, archive@fit.cvut.cz, boss13@fit.cvut.cz, dean@fit.cvut.cz, office13@fit.cvut.cz, person3@fit.cvut.cz, user76@fit.cvut.cz, vice-dean@fit.cvut.cz" );
-    users = m . ActiveUsers ( CTimeStamp ( 2019, 3, 28, 0, 0, 0 ),
-                              CTimeStamp ( 2019, 3, 29, 13, 59, 59 ) );
-    assert ( printUsers ( users ) == "person3@fit.cvut.cz, user76@fit.cvut.cz" );
+            "Mar 29 2019 15:02:34.230 relay.fit.cvut.cz KhdfEjkl247D: to=archive@fit.cvut.cz\n");
+    assert (m.ParseLog(iss) == 8);
+    mailList = m.ListMail(CTimeStamp(2019, 3, 28, 0, 0, 0),
+                          CTimeStamp(2019, 3, 29, 23, 59, 59));
+    assert (printMail(mailList) ==
+            "2019-03-29 13:36:13.023 person3@fit.cvut.cz -> user76@fit.cvut.cz, subject: New progtest homework!\n"
+            "2019-03-29 14:18:12.654 office13@fit.cvut.cz -> boss13@fit.cvut.cz, subject: \n"
+            "2019-03-29 14:58:32.000 PR-department@fit.cvut.cz -> HR-department@fit.cvut.cz, subject: Business partner\n"
+            "2019-03-29 15:02:34.230 PR-department@fit.cvut.cz -> CEO@fit.cvut.cz, subject: Business partner\n"
+            "2019-03-29 15:02:34.230 PR-department@fit.cvut.cz -> dean@fit.cvut.cz, subject: Business partner\n"
+            "2019-03-29 15:02:34.230 PR-department@fit.cvut.cz -> vice-dean@fit.cvut.cz, subject: Business partner\n"
+            "2019-03-29 15:02:34.230 PR-department@fit.cvut.cz -> archive@fit.cvut.cz, subject: Business partner\n"
+            "2019-03-29 15:02:34.231 PR-department@fit.cvut.cz -> CIO@fit.cvut.cz, subject: Business partner\n");
+    mailList = m.ListMail(CTimeStamp(2019, 3, 28, 0, 0, 0),
+                          CTimeStamp(2019, 3, 29, 14, 58, 32));
+    assert (printMail(mailList) ==
+            "2019-03-29 13:36:13.023 person3@fit.cvut.cz -> user76@fit.cvut.cz, subject: New progtest homework!\n"
+            "2019-03-29 14:18:12.654 office13@fit.cvut.cz -> boss13@fit.cvut.cz, subject: \n"
+            "2019-03-29 14:58:32.000 PR-department@fit.cvut.cz -> HR-department@fit.cvut.cz, subject: Business partner\n");
+    mailList = m.ListMail(CTimeStamp(2019, 3, 30, 0, 0, 0),
+                          CTimeStamp(2019, 3, 30, 23, 59, 59));
+    assert (printMail(mailList) == "");
+    users = m.ActiveUsers(CTimeStamp(2019, 3, 28, 0, 0, 0),
+                          CTimeStamp(2019, 3, 29, 23, 59, 59));
+    assert (printUsers(users) ==
+            "CEO@fit.cvut.cz, CIO@fit.cvut.cz, HR-department@fit.cvut.cz, PR-department@fit.cvut.cz, archive@fit.cvut.cz, boss13@fit.cvut.cz, dean@fit.cvut.cz, office13@fit.cvut.cz, person3@fit.cvut.cz, user76@fit.cvut.cz, vice-dean@fit.cvut.cz");
+    users = m.ActiveUsers(CTimeStamp(2019, 3, 28, 0, 0, 0),
+                          CTimeStamp(2019, 3, 29, 13, 59, 59));
+    assert (printUsers(users) == "person3@fit.cvut.cz, user76@fit.cvut.cz");
     return 0;
 }
+
 #endif /* __PROGTEST__ */
