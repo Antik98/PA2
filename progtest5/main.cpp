@@ -55,7 +55,6 @@ public:
     friend ostream &operator<<(ostream &os,
                                const CTimeStamp &x);
 
-private:
     int year;
     int month;
     int day;
@@ -71,6 +70,8 @@ ostream &operator<<(ostream &os, const CTimeStamp &x) {
     << x.hour << ":"
     << x.minute << ":"
     << setprecision(3)<< x.sec;
+
+    return os;
 }
 
 class CMail {
@@ -109,9 +110,9 @@ public:
     friend ostream &operator<<(ostream &os,
                                const CMail &x){
         os << x.stamp << x.from << x.to << x.subject;
+        return os;
     }
 
-private:
     CTimeStamp stamp;
     string from;
     string to;
@@ -133,8 +134,52 @@ namespace MysteriousNamespace {
                                 const CTimeStamp &to) const;
 
     private:
-        // todo
+        vector<string> inputV;
     };
+
+    int CMailLog::ParseLog(istream &in) {
+        string tmp;
+        while(std::getline(in,tmp)){// gets line of the log
+            std::istringstream iss;
+            iss.str(tmp);
+            string word;
+            while(!iss.eof()){           // parses the line into individual strings based on space
+                iss >> word;
+                if(word.empty()){
+                    cout<< "Chyba nactena mezera, prazdny string" << endl;
+                }
+                inputV.push_back(word);
+                word.clear();
+            }
+            if(inputV.size()<7){ // checks if has enough words else ignores
+                inputV.clear();
+                continue;
+            }
+            int year;
+            string month;
+            int hour;
+            int min;
+            double sec;
+            char inputTime[inputV[3].size()] = inputV[3];
+            sscanf(inputTime, " %d:%d:%lf", &hour, &min, &sec);
+            CTimeStamp tmpStamp(,,hour, min, sec);
+
+
+
+
+
+        }
+    }
+
+
+    list<CMail> CMailLog::ListMail(const CTimeStamp &from, const CTimeStamp &to) const {
+
+    }
+
+    set<string> CMailLog::ActiveUsers(const CTimeStamp &from, const CTimeStamp &to) const {
+
+    }
+
 //----------------------------------------------------------------------------------------
 #ifndef __PROGTEST__
 } // namespace
