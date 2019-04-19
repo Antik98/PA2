@@ -134,17 +134,60 @@ namespace MysteriousNamespace {
                                 const CTimeStamp &to) const;
 
     private:
-        vector<string> inputV;
+        map<>;
+        multiset;
     };
+    int parseMonth(string tmp){
+        switch(tmp){
+            case ("Jan"):
+                return 1;
+            case ("Feb"):
+                return 2;
+            case ("Mar"):
+                return 3;
+            case ("Apr"):
+                return 4;
+            case ("May"):
+                return 5;
+            case ("Jun"):
+                return 6;
+            case ("Jul"):
+                return 7;
+            case ("Aug"):
+                return 8;
+            case ("Sep"):
+                return 9;
+            case ("Oct"):
+                return 10;
+            case ("Nov"):
+                return 11;
+            case ("Dec"):
+                return 12;
+            default:
+                return 0;
+        }
+    }
 
     int CMailLog::ParseLog(istream &in) {
         string tmp;
         while(std::getline(in,tmp)){// gets line of the log
             std::istringstream iss;
             iss.str(tmp);
-            string word;
+            int year;
+            int day;
+            int hour;
+            int minute;
+            int sec;
+            char dummy1;
+            char dummy2;
+            string mailId;
+            string monthPreParse;
             while(!iss.eof()){           // parses the line into individual strings based on space
-                iss >> word;
+                iss >>  monthPreParse;
+                month = parseMonth(monthPreParse);
+
+                iss>> day >> year >> hour >> dummy1 >> minute >> dummy2 >> sec >> mailId;
+
                 if(word.empty()){
                     cout<< "Chyba nactena mezera, prazdny string" << endl;
                 }

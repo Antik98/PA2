@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/progtest5.dir/main.cpp.obj"
+  "CMakeFiles/progtest5.dir/main.cpp.o"
   "progtest5.pdb"
-  "progtest5.exe"
-  "progtest5.exe.manifest"
-  "libprogtest5.dll.a"
+  "progtest5"
 )
 
 # Per-language clean rules from dependency scanning.
