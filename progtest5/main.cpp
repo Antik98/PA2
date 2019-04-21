@@ -58,7 +58,6 @@ public:
         if (sec != x.sec)
             return cmpDouble(sec, x.sec);
 
-
         return 0;
 
     };
@@ -92,6 +91,7 @@ public:
           const string &to,
           const string &subject)
             :stamp(timeStamp), from(from), to(to), subject(subject) {}
+
 
 
     int CompareByTime(const CTimeStamp &x) const {
@@ -190,6 +190,7 @@ namespace MysteriousNamespace {
         for (int i = 0; i <= 11; i++) {
             if (tmp == months[i]) {
                 return i + 1;
+
             }
         }
         return 0;

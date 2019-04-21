@@ -41,8 +41,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="348">
               <caret line="158" column="12" lean-forward="true" selection-start-line="158" selection-start-column="12" selection-end-line="158" selection-end-column="12" />
+=======
+            <state relative-caret-position="197">
+              <caret line="204" column="34" lean-forward="true" selection-end-line="328" />
+>>>>>>> b9d41c0be7d020fe35761f7ea57e5eaaa099ef41
             </state>
           </provider>
         </entry>
@@ -59,10 +64,17 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="640" />
     <option name="height" value="777" />
+=======
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1713" />
+    <option name="width" value="1734" />
+    <option name="height" value="1407" />
+>>>>>>> b9d41c0be7d020fe35761f7ea57e5eaaa099ef41
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -70,7 +82,21 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="ProjectPane" />
+=======
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="progtest5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="progtest5" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+>>>>>>> b9d41c0be7d020fe35761f7ea57e5eaaa099ef41
       <pane id="Scope" />
     </panes>
   </component>
@@ -120,13 +146,19 @@
       <workItem from="1555419614977" duration="524000" />
       <workItem from="1555601824276" duration="1262000" />
       <workItem from="1555617833143" duration="531000" />
+<<<<<<< HEAD
       <workItem from="1555664194618" duration="130000" />
       <workItem from="1555771757344" duration="66000" />
       <workItem from="1555847707844" duration="921000" />
+=======
+      <workItem from="1555664365019" duration="35000" />
+      <workItem from="1555664416177" duration="5303000" />
+>>>>>>> b9d41c0be7d020fe35761f7ea57e5eaaa099ef41
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="20635000" />
   </component>
   <component name="ToolWindowManager">
@@ -134,6 +166,15 @@
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25201938" />
+=======
+    <option name="totallyTimeSpent" value="24856000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1713" y="0" width="1734" height="1407" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10334528" />
+>>>>>>> b9d41c0be7d020fe35761f7ea57e5eaaa099ef41
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -163,7 +204,11 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
+<<<<<<< HEAD
           <line>369</line>
+=======
+          <line>317</line>
+>>>>>>> b9d41c0be7d020fe35761f7ea57e5eaaa099ef41
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -175,8 +220,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="348">
           <caret line="158" column="12" lean-forward="true" selection-start-line="158" selection-start-column="12" selection-end-line="158" selection-end-column="12" />
+=======
+        <state relative-caret-position="197">
+          <caret line="204" column="34" lean-forward="true" selection-end-line="328" />
+>>>>>>> b9d41c0be7d020fe35761f7ea57e5eaaa099ef41
         </state>
       </provider>
     </entry>
