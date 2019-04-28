@@ -15,12 +15,21 @@ using namespace std;
 #endif /* __PROGTEST__ */
 class CComponent{
 public:
-    virtual ostream& print(ostream& os){}
+    virtual ostream& print(ostream& os, bool isLast)const =0;
 };
 
 class CComputer{
 public:
     CComputer(string name) : pcName(name){};
+    CComputer* copy() const {
+        CComputer* ret = new CComputer(pcName);
+        for (auto x =compV.begin() ; x!=compV.end(); x ++){
+            ret->compV.push_back(unique_ptr<CComponent>());
+        }
+        for (auto x :pcAddr)
+            ret->pcAddr.push_back(x);
+
+    }
     CComputer& AddAddress(string addr){
             pcAddr.push_back(addr);
             return *this;
@@ -30,6 +39,39 @@ public:
         compV.push_back(make_unique<T>(comp));
         return *this;
     }
+    ostream & print(ostream& os, bool isLast) const{ // used during network print
+        if(!isLast){
+            os << "+-";
+        }else {
+            os << "\\";
+        }
+        os<< "Host: " << pcName << "\n";
+        for ( auto it = compV.begin(); it!=compV.end() ; it++){
+            if(it == compV.end()||it+1 == compV.end() || isLast){
+                os << "  +-";
+                (*it)->print(os, true);
+            }else{
+                os<< "| +-";
+                (*it)->print(os, false);
+            }
+
+        }
+    }
+    ostream & print(ostream& os) const{ // used during pc Print
+        os<< "Host: " << pcName << "\n";
+        for ( auto it = compV.begin(); it!=compV.end() ; it++){
+            if(it == compV.end()||it+1 == compV.end()){
+                os << "  +-";
+                (*it)->print(os, true);
+            }else{
+                os<< "| +-";
+                (*it)->print(os, false);
+            }
+        }
+    }
+    friend ostream&operator << (ostream & os, const CComputer & inpPc){
+        return inpPc.print(os);
+    }
     string pcName;
     list<string> pcAddr;
     vector<unique_ptr<CComponent>> compV;
@@ -37,22 +79,54 @@ public:
 class CNetwork {
 public:
     CNetwork & AddComputer(const CComputer & inpComputer){
-        pcM.insert(make_pair(inpComputer.pcName,inpComputer));
+        pcM.insert(make_pair(inpComputer.pcName,inpComputer.copy()));
         return *this;
     }
     CNetwork(string inp) : netName(inp){}
+    CComputer* FindComputer(string name){
+        auto ret = pcM.find(name);
+        if (ret==pcM.end()){
+            return NULL;
+        }else{
+            return(pcM[name].get());
+        }
+    }
+    ostream & print(ostream& os) const{
+        os<< "Network: " << netName << "\n";
+        int i = 0;
+        for(auto it = pcM.begin();it!=pcM.end() && i<=pcM.size();it++,i++){
+            if(i==pcM.size() || it==pcM.end()){
+                it->second->print(os, true);
+            }else{
+                it->second->print(os, true);
+            }
+        }
+    }
+    friend ostream&operator<<(ostream & os, const CNetwork & inpNet);
 private:
     string netName;
-    map<string,CComputer> pcM;
+    map<string,shared_ptr<CComputer>> pcM;
 };
+
+ostream&operator << (ostream & os, const CNetwork & inpNet){
+    return inpNet.print(os);
+}
 
 class CCPU : public CComponent {
 public:
     CCPU(){}
     CCPU(int cores, int mhz) : cores(cores), speed(mhz){}
-    ostream& print(ostream& os) const {
+    ostream& print(ostream& os, bool isLast) const override{
+        if(isLast){
+            os << "\\-";
+        }else{
+            os<< "+-";
+        }
         os<< "CPU, "<< cores <<" cores @ "<< speed <<"MHz";
         return os;
+    }
+    CCPU* copy(){
+        return (new CCPU(cores, speed));
     }
 private:
     int cores;
@@ -62,9 +136,17 @@ private:
 class CMemory : public CComponent{
 public:
     CMemory(int inpS):size(inpS){}
-    virtual ostream& print(ostream& os){
+    ostream& print(ostream& os, bool isLast) const override{
+        if(isLast){
+            os << "\\-";
+        }else{
+            os<< "+-";
+        }
         os<< "Memory, "<< size <<" MiB";
         return os;
+    }
+    CMemory* copy(){
+        return (new CMemory(size));
     }
 private:
     int size;
@@ -85,6 +167,43 @@ public:
     CDisk & AddPartition(int size, string dir){
         partitV.emplace_back(make_pair(size,dir));
         return *this;
+    }
+    ostream& print(ostream& os, bool isLast) const override{
+        if(isLast)
+            os<<"+-";
+        else
+            os<<"\\-";
+
+        if(isMagnetic)
+            os<<"HDD, ";
+        else
+            os<<"SSD, ";
+
+        os << size <<" GiB" <<endl;
+        int counter = 0;
+        if(!partitV.empty())
+            for (auto i = partitV.begin();i!=partitV.end();i++){
+                if((i+1) == partitV.end()){
+                    os <<"| \\-";
+                }else{
+                    os << "| +-";
+                }
+                os<< "[" << counter << "]: " << i->first << " GiB, " << i->second <<endl;
+            }
+        return os;
+    }
+    CDisk* copy() const {
+        int tmp=0;
+        if(isMagnetic)
+            tmp=1;
+        else
+            tmp=1;
+
+        CDisk* ret = new CDisk(tmp,size);
+        for (auto x =partitV.begin() ; x!=partitV.end(); x++){
+            ret->partitV.push_back(*x);
+        }
+        return ret;
     }
 private:
     bool isMagnetic;
