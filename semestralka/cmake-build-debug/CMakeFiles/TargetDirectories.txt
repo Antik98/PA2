@@ -1,0 +1,3 @@
+C:/CVUT FIT/PA2/semestralka/cmake-build-debug/CMakeFiles/semestralka.dir
+C:/CVUT FIT/PA2/semestralka/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/CVUT FIT/PA2/semestralka/cmake-build-debug/CMakeFiles/rebuild_cache.dir
