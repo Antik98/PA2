@@ -11,7 +11,7 @@ public:
     CPauseMenu();
     ~CPauseMenu();
     void render() const;
-    void processInput();
+    int parseInput();
 };
 
 

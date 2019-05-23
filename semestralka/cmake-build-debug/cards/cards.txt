@@ -1,0 +1,33 @@
+0 {
+	0
+	Progtest Berserker
+	Destroys every progtest
+	2
+	1
+	3
+}
+
+1 {
+	0
+	Stasis Dragon
+	A dragon that is very lazy.
+	6
+	6
+	6
+}
+
+2 {
+	1
+	Chronoshot
+	A damage spell that deals 3 dmg
+	3
+	-3
+}
+
+3 {
+	1
+	Heal Well
+	A healing spell that heals 2 HP
+	4
+	2
+}

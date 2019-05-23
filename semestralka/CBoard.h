@@ -10,6 +10,9 @@ class CBoard : public CWindow {
 public:
     void render() const;
     void  processInput();
+
+protected:
+
 };
 
 

@@ -10,8 +10,8 @@ class CWindow {
 public:
     CWindow()= default;
     virtual ~CWindow()= default;
-    virtual void render() const=0;
-    virtual void parseInput() =0;
+    virtual void render() const = 0;
+    virtual int parseInput() = 0;
 
 };
 

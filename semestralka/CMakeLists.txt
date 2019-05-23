@@ -1,6 +1,19 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.14)
 project(semestralka)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(semestralka main.cpp CBoard.cpp CBoard.h CPauseMenu.cpp CPauseMenu.h CMainMenu.cpp CMainMenu.h CGame.cpp CGame.h CWindow.cpp CWindow.h)
+include_directories(.)
+
+add_executable(semestralka
+        CBoard.cpp
+        CBoard.h
+        CGame.cpp
+        CGame.h
+        CMainMenu.cpp
+        CMainMenu.h
+        CPauseMenu.cpp
+        CPauseMenu.h
+        CWindow.cpp
+        CWindow.h
+        main.cpp CCardStack.cpp CCardStack.h CCard.cpp CCard.h CMinion.cpp CMinion.h CSpell.cpp CSpell.h CardDatabase.cpp CardDatabase.h CPlayer.cpp CPlayer.h CHumanPlayer.cpp CHumanPlayer.h CAIPlayer.cpp CAIPlayer.h)

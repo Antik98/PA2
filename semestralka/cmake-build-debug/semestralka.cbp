@@ -24,6 +24,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="C:/CVUT FIT/PA2/semestralka/."/>
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
@@ -45,6 +46,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="C:/CVUT FIT/PA2/semestralka/."/>
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
@@ -80,10 +82,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CAIPlayer.cpp">
+			<Option target="semestralka"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CAIPlayer.h">
+			<Option target="semestralka"/>
+		</Unit>
 		<Unit filename="C:/CVUT FIT/PA2/semestralka/CBoard.cpp">
 			<Option target="semestralka"/>
 		</Unit>
 		<Unit filename="C:/CVUT FIT/PA2/semestralka/CBoard.h">
+			<Option target="semestralka"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CCard.cpp">
+			<Option target="semestralka"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CCard.h">
+			<Option target="semestralka"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CCardStack.cpp">
+			<Option target="semestralka"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CCardStack.h">
 			<Option target="semestralka"/>
 		</Unit>
 		<Unit filename="C:/CVUT FIT/PA2/semestralka/CGame.cpp">
@@ -92,10 +112,22 @@
 		<Unit filename="C:/CVUT FIT/PA2/semestralka/CGame.h">
 			<Option target="semestralka"/>
 		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CHumanPlayer.cpp">
+			<Option target="semestralka"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CHumanPlayer.h">
+			<Option target="semestralka"/>
+		</Unit>
 		<Unit filename="C:/CVUT FIT/PA2/semestralka/CMainMenu.cpp">
 			<Option target="semestralka"/>
 		</Unit>
 		<Unit filename="C:/CVUT FIT/PA2/semestralka/CMainMenu.h">
+			<Option target="semestralka"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CMinion.cpp">
+			<Option target="semestralka"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CMinion.h">
 			<Option target="semestralka"/>
 		</Unit>
 		<Unit filename="C:/CVUT FIT/PA2/semestralka/CPauseMenu.cpp">
@@ -104,10 +136,28 @@
 		<Unit filename="C:/CVUT FIT/PA2/semestralka/CPauseMenu.h">
 			<Option target="semestralka"/>
 		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CPlayer.cpp">
+			<Option target="semestralka"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CPlayer.h">
+			<Option target="semestralka"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CSpell.cpp">
+			<Option target="semestralka"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CSpell.h">
+			<Option target="semestralka"/>
+		</Unit>
 		<Unit filename="C:/CVUT FIT/PA2/semestralka/CWindow.cpp">
 			<Option target="semestralka"/>
 		</Unit>
 		<Unit filename="C:/CVUT FIT/PA2/semestralka/CWindow.h">
+			<Option target="semestralka"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CardDatabase.cpp">
+			<Option target="semestralka"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/semestralka/CardDatabase.h">
 			<Option target="semestralka"/>
 		</Unit>
 		<Unit filename="C:/CVUT FIT/PA2/semestralka/main.cpp">

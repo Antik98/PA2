@@ -7,14 +7,20 @@
 
 #include <vector>
 #include "CWindow.h"
+#include "CardDatabase.h"
 
 using namespace std;
 class CGame {
 public:
     CGame();
     ~CGame();
+    int start();
 protected:
+    int activeWindowIndex;
     vector<CWindow*> windows;
+    CardDatabase database;
+
+
 };
 
 

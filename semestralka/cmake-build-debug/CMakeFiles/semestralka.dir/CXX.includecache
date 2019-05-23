@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/CVUT FIT/PA2/semestralka/CCard.h
+string
+-
+
+C:/CVUT FIT/PA2/semestralka/CMinion.h
+CCard.h
+C:/CVUT FIT/PA2/semestralka/CCard.h
+
+C:/CVUT FIT/PA2/semestralka/CSpell.h
+iostream
+-
+CCard.h
+C:/CVUT FIT/PA2/semestralka/CCard.h
+CMinion.h
+C:/CVUT FIT/PA2/semestralka/CMinion.h
+
+C:/CVUT FIT/PA2/semestralka/CardDatabase.cpp
+iostream
+-
+fstream
+-
+sstream
+-
+CardDatabase.h
+C:/CVUT FIT/PA2/semestralka/CardDatabase.h
+CSpell.h
+C:/CVUT FIT/PA2/semestralka/CSpell.h
+CMinion.h
+C:/CVUT FIT/PA2/semestralka/CMinion.h
+
+C:/CVUT FIT/PA2/semestralka/CardDatabase.h
+iostream
+-
+vector
+-
+CCard.h
+C:/CVUT FIT/PA2/semestralka/CCard.h
+

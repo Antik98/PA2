@@ -8,8 +8,10 @@
 
 class CMainMenu : public CWindow {
 public:
-    void render() const;
-    void processInput();
+    CMainMenu()=default;
+    ~CMainMenu()= default;
+    void render() const override;
+    int parseInput();
 };
 
 
