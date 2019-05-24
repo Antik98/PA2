@@ -16,6 +16,8 @@ CardDatabase::CardDatabase() {
         throw cardDatabaseException();
 }
 
+
+
 bool CardDatabase::parseDatabase(string & fileName) {
     int id;
     bool isSpell;
@@ -36,7 +38,7 @@ bool CardDatabase::parseDatabase(string & fileName) {
         name="";
         description="";
         if(!firstLine) {
-            getline(inputFile, inputLine);
+            if(!getline(inputFile, inputLine)) return false;
         }
         firstLine=false;
         istringstream iss;
@@ -44,12 +46,12 @@ bool CardDatabase::parseDatabase(string & fileName) {
         iss >> id >> dummy1;
         if(dummy1!='{') return false; // returns false if not reached {
 
-        getline(inputFile, inputLine);// line 2 -- isSpell
+        if(!getline(inputFile, inputLine)) return false;// line 2 -- isSpell
         iss.str(inputLine);
         iss.seekg(1);
         iss >> isSpell;
 
-        getline(inputFile, inputLine);// line 3 -- name
+        if(!getline(inputFile, inputLine)) return false;// line 3 -- name
         iss.str(inputLine);
         iss.seekg(1);
         while(!iss.eof()){
@@ -59,7 +61,7 @@ bool CardDatabase::parseDatabase(string & fileName) {
                 name+=" ";
         }
 
-        getline(inputFile, inputLine);// line 4 -- description
+        if(!getline(inputFile, inputLine)) return false;// line 4 -- description
         iss.str(inputLine);
         iss.seekg(1);
         while(!iss.eof()){
@@ -69,13 +71,13 @@ bool CardDatabase::parseDatabase(string & fileName) {
                 description+=" ";
         }
 
-        getline(inputFile, inputLine);// line 5 -- manaRequired
+        if(!getline(inputFile, inputLine)) return false;// line 5 -- manaRequired
         iss.str(inputLine);
         iss.seekg(1);
         iss >> manaRequired;
 
         if(isSpell){ // spell card
-            getline(inputFile, inputLine);// line 6 -- dmg, negative if damaging, positive if healing
+            if(!getline(inputFile, inputLine)) return false;// line 6 -- dmg, negative if damaging, positive if healing
             iss.str(inputLine);
             iss.seekg(1);
             iss >> dmg;
@@ -83,14 +85,14 @@ bool CardDatabase::parseDatabase(string & fileName) {
             //check if spell valid
             if(isSpell!=1 || name.empty() || description.empty() || manaRequired<0) return false;
 
-            database.push_back(new CSpell(isSpell, name, description, manaRequired, dmg));
+            database.push_back(new CSpell(id, isSpell, name, description, manaRequired, dmg));
         }else { // minion card
-            getline(inputFile, inputLine);// line 6 -- dmg
+            if(!getline(inputFile, inputLine)) return false;// line 6 -- dmg
             iss.str(inputLine);
             iss.seekg(1);
             iss >> dmg;
 
-            getline(inputFile, inputLine);// line 7 -- hp
+            if(!getline(inputFile, inputLine)) return false;// line 7 -- hp
             iss.str(inputLine);
             iss.seekg(1);
             iss >> hp;
@@ -98,12 +100,14 @@ bool CardDatabase::parseDatabase(string & fileName) {
             //check if minion valid before insert
             if(isSpell!=0 || name.empty() || description.empty() || manaRequired<0 || dmg<0 || hp<0) return false;
 
-            database.push_back(new CMinion(isSpell, name, description, manaRequired, dmg, hp));
+            database.push_back(new CMinion(id,isSpell, name, description, manaRequired, dmg, hp));
         }
 
-        getline(inputFile, tmp);// line 7/8 -- ending bracket - could fail this leads to incorrect number of rows, throw exception
+        if(!getline(inputFile, tmp)) return false;// line 7/8 -- ending bracket - could fail this leads to incorrect number of rows, throw exception
         if(tmp.size()==1 && tmp[0]!='}') return false; // returns false if not reached }
 
     }
+    if(database.size()<databaseAmount) return false;
+    inputFile.close();
     return true;
 }

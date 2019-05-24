@@ -11,13 +11,14 @@
 using namespace std;
 
 class CPlayer {
-public:
-    int hp;
+protected:
+    int hp=30;
     CCardStack board;
     CCardStack hand;
     CCardStack deck;
+public:
     virtual int play()=0;
-    virtual int endTurn()=0;
+    virtual int takeHit()=0;
 };
 
 

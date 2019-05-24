@@ -5,20 +5,21 @@
 #ifndef SEMESTRALKA_CCARD_H
 #define SEMESTRALKA_CCARD_H
 
+#include <iostream>
 #include <string>
-#include "CMinion.h"
+
 
 using namespace std;
 
 class CCard {
 public:
+    int id;
     bool isSpell;
     string name;
     string description;
     int manaRequired;
 
-    CCard(bool isSpell, string &name, string &description, int manaRequired);
-    virtual int attack(CMinion&)=0;
+    CCard(int id, bool isSpell, string &name, string &description, int manaRequired);
 };
 
 

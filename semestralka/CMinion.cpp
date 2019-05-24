@@ -4,8 +4,8 @@
 
 #include "CMinion.h"
 
-CMinion::CMinion(bool isSpell, string &name, string &description, int manaRequired, int dmg, int hp) :
-    CCard(isSpell,name,description,manaRequired),
+CMinion::CMinion(int id, bool isSpell, string &name, string &description, int manaRequired, int dmg, int hp) :
+    CCard(id, isSpell,name,description,manaRequired),
     dmg(dmg),
     hp(hp) {
 }

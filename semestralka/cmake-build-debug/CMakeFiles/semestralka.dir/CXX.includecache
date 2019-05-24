@@ -6,21 +6,97 @@
 
 #IncludeRegexTransform: 
 
+C:/CVUT FIT/PA2/semestralka/CAIPlayer.cpp
+CAIPlayer.h
+C:/CVUT FIT/PA2/semestralka/CAIPlayer.h
+
+C:/CVUT FIT/PA2/semestralka/CAIPlayer.h
+iostream
+-
+CPlayer.h
+C:/CVUT FIT/PA2/semestralka/CPlayer.h
+
 C:/CVUT FIT/PA2/semestralka/CCard.h
+iostream
+-
 string
 -
 
-C:/CVUT FIT/PA2/semestralka/CMinion.h
+C:/CVUT FIT/PA2/semestralka/CCardStack.cpp
+iostream
+-
+fstream
+-
+CCardStack.h
+C:/CVUT FIT/PA2/semestralka/CCardStack.h
+
+C:/CVUT FIT/PA2/semestralka/CCardStack.h
+iostream
+-
+vector
+-
 CCard.h
 C:/CVUT FIT/PA2/semestralka/CCard.h
+CardDatabase.h
+C:/CVUT FIT/PA2/semestralka/CardDatabase.h
+
+C:/CVUT FIT/PA2/semestralka/CGame.cpp
+CGame.h
+C:/CVUT FIT/PA2/semestralka/CGame.h
+CMainMenu.h
+C:/CVUT FIT/PA2/semestralka/CMainMenu.h
+CPauseMenu.h
+C:/CVUT FIT/PA2/semestralka/CPauseMenu.h
+
+C:/CVUT FIT/PA2/semestralka/CGame.h
+vector
+-
+CWindow.h
+C:/CVUT FIT/PA2/semestralka/CWindow.h
+CardDatabase.h
+C:/CVUT FIT/PA2/semestralka/CardDatabase.h
+
+C:/CVUT FIT/PA2/semestralka/CHumanPlayer.cpp
+CHumanPlayer.h
+C:/CVUT FIT/PA2/semestralka/CHumanPlayer.h
+
+C:/CVUT FIT/PA2/semestralka/CHumanPlayer.h
+iostream
+-
+CPlayer.h
+C:/CVUT FIT/PA2/semestralka/CPlayer.h
+
+C:/CVUT FIT/PA2/semestralka/CMainMenu.h
+CWindow.h
+C:/CVUT FIT/PA2/semestralka/CWindow.h
+
+C:/CVUT FIT/PA2/semestralka/CMinion.h
+iostream
+-
+CCard.h
+C:/CVUT FIT/PA2/semestralka/CCard.h
+
+C:/CVUT FIT/PA2/semestralka/CPauseMenu.h
+CWindow.h
+C:/CVUT FIT/PA2/semestralka/CWindow.h
+
+C:/CVUT FIT/PA2/semestralka/CPlayer.cpp
+CPlayer.h
+C:/CVUT FIT/PA2/semestralka/CPlayer.h
+
+C:/CVUT FIT/PA2/semestralka/CPlayer.h
+iostream
+-
+CCardStack.h
+C:/CVUT FIT/PA2/semestralka/CCardStack.h
 
 C:/CVUT FIT/PA2/semestralka/CSpell.h
 iostream
 -
 CCard.h
 C:/CVUT FIT/PA2/semestralka/CCard.h
-CMinion.h
-C:/CVUT FIT/PA2/semestralka/CMinion.h
+
+C:/CVUT FIT/PA2/semestralka/CWindow.h
 
 C:/CVUT FIT/PA2/semestralka/CardDatabase.cpp
 iostream
@@ -43,4 +119,10 @@ vector
 -
 CCard.h
 C:/CVUT FIT/PA2/semestralka/CCard.h
+
+C:/CVUT FIT/PA2/semestralka/main.cpp
+iostream
+-
+CGame.h
+C:/CVUT FIT/PA2/semestralka/CGame.h
 

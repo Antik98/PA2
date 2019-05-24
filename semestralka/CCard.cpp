@@ -4,8 +4,9 @@
 
 #include "CCard.h"
 
-CCard::CCard(bool isSpell, string &name, string &description, int manaRequired)
-    : isSpell(isSpell),
+CCard::CCard(int id, bool isSpell, string &name, string &description, int manaRequired)
+    : id(id),
+    isSpell(isSpell),
     name(name),
     description(description),
     manaRequired(manaRequired) {}

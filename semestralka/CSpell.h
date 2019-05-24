@@ -6,7 +6,6 @@
 #define SEMESTRALKA_CSPELL_H
 #include <iostream>
 #include "CCard.h"
-#include "CMinion.h"
 
 using namespace std;
 
@@ -14,8 +13,8 @@ class CSpell : public CCard{
 public:
     int dmg; // negative if deals damage, positive heals
 
-    CSpell(bool isSpell, string name, string description, int mana, int dmg);
-    int apply(CMinion&);
+    CSpell(int id, bool isSpell, string name, string description, int mana, int dmg);
+    //int apply(CMinion&);
 };
 
 

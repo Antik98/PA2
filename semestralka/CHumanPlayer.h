@@ -11,7 +11,10 @@
 using namespace std;
 
 class CHumanPlayer : public CPlayer {
-
+public:
+    CHumanPlayer(bool loadFromSave, CardDatabase&);
+    int play() override;
+    int takeHit() override;
 };
 
 

@@ -9,6 +9,7 @@
 #include <iostream>
 #include <vector>
 #include "CCard.h"
+static const int databaseAmount=32;
 
 class CardDatabase {
 public:

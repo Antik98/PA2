@@ -5,11 +5,8 @@
 #include "CSpell.h"
 
 
-CSpell::CSpell(bool isSpell, string name, string description, int mana, int dmg) : CCard(isSpell,name,description,mana), dmg(dmg)
+CSpell::CSpell(int id, bool isSpell, string name, string description, int mana, int dmg) : CCard(id,isSpell,name,description,mana), dmg(dmg)
 {
 
 }
 
-int CSpell::apply(CMinion &) {
-    return 0;
-}

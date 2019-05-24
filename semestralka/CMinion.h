@@ -4,14 +4,14 @@
 
 #ifndef SEMESTRALKA_CMINION_H
 #define SEMESTRALKA_CMINION_H
-
-
+#include <iostream>
 #include "CCard.h"
 using namespace std;
 
 class CMinion : public CCard {
+
 public:
-    CMinion(bool isSpell, string &name, string &description, int manaRequired, int dmg, int hp);
+    CMinion(int id, bool isSpell, string &name, string &description, int manaRequired, int dmg, int hp);
 
     int dmg; // deals damage
     int hp; // health

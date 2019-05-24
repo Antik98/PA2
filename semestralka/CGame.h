@@ -8,6 +8,7 @@
 #include <vector>
 #include "CWindow.h"
 #include "CardDatabase.h"
+#include "CPlayer.h"
 
 using namespace std;
 class CGame {
@@ -18,9 +19,8 @@ public:
 protected:
     int activeWindowIndex;
     vector<CWindow*> windows;
-    CardDatabase database;
-
-
+    static CardDatabase database;
+    vector<CPlayer*> players;
 };
 
 
