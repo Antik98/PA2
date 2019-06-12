@@ -4,57 +4,91 @@
 CMakeFiles/semestralka.dir/CAIPlayer.cpp.obj
  C:/CVUT FIT/PA2/semestralka/CAIPlayer.cpp
  C:/CVUT FIT/PA2/semestralka/CAIPlayer.h
+ C:/CVUT FIT/PA2/semestralka/CBoard.h
  C:/CVUT FIT/PA2/semestralka/CCard.h
  C:/CVUT FIT/PA2/semestralka/CCardStack.h
  C:/CVUT FIT/PA2/semestralka/CPlayer.h
+ C:/CVUT FIT/PA2/semestralka/CWindow.h
  C:/CVUT FIT/PA2/semestralka/CardDatabase.h
 CMakeFiles/semestralka.dir/CBoard.cpp.obj
+ C:/CVUT FIT/PA2/semestralka/CAIPlayer.h
  C:/CVUT FIT/PA2/semestralka/CBoard.cpp
  C:/CVUT FIT/PA2/semestralka/CBoard.h
+ C:/CVUT FIT/PA2/semestralka/CCard.h
+ C:/CVUT FIT/PA2/semestralka/CCardStack.h
+ C:/CVUT FIT/PA2/semestralka/CGame.h
+ C:/CVUT FIT/PA2/semestralka/CHumanPlayer.h
+ C:/CVUT FIT/PA2/semestralka/CMainMenu.h
+ C:/CVUT FIT/PA2/semestralka/CPauseMenu.h
+ C:/CVUT FIT/PA2/semestralka/CPlayer.h
  C:/CVUT FIT/PA2/semestralka/CWindow.h
+ C:/CVUT FIT/PA2/semestralka/CardDatabase.h
 CMakeFiles/semestralka.dir/CCard.cpp.obj
+ C:/CVUT FIT/PA2/semestralka/CBoard.h
  C:/CVUT FIT/PA2/semestralka/CCard.cpp
  C:/CVUT FIT/PA2/semestralka/CCard.h
+ C:/CVUT FIT/PA2/semestralka/CCardStack.h
+ C:/CVUT FIT/PA2/semestralka/CPlayer.h
+ C:/CVUT FIT/PA2/semestralka/CWindow.h
+ C:/CVUT FIT/PA2/semestralka/CardDatabase.h
 CMakeFiles/semestralka.dir/CCardStack.cpp.obj
+ C:/CVUT FIT/PA2/semestralka/CBoard.h
  C:/CVUT FIT/PA2/semestralka/CCard.h
  C:/CVUT FIT/PA2/semestralka/CCardStack.cpp
  C:/CVUT FIT/PA2/semestralka/CCardStack.h
+ C:/CVUT FIT/PA2/semestralka/CMinion.h
+ C:/CVUT FIT/PA2/semestralka/CWindow.h
  C:/CVUT FIT/PA2/semestralka/CardDatabase.h
 CMakeFiles/semestralka.dir/CGame.cpp.obj
+ C:/CVUT FIT/PA2/semestralka/CAIPlayer.h
+ C:/CVUT FIT/PA2/semestralka/CBoard.h
  C:/CVUT FIT/PA2/semestralka/CCard.h
+ C:/CVUT FIT/PA2/semestralka/CCardStack.h
  C:/CVUT FIT/PA2/semestralka/CGame.cpp
  C:/CVUT FIT/PA2/semestralka/CGame.h
+ C:/CVUT FIT/PA2/semestralka/CHumanPlayer.h
  C:/CVUT FIT/PA2/semestralka/CMainMenu.h
  C:/CVUT FIT/PA2/semestralka/CPauseMenu.h
+ C:/CVUT FIT/PA2/semestralka/CPlayer.h
  C:/CVUT FIT/PA2/semestralka/CWindow.h
  C:/CVUT FIT/PA2/semestralka/CardDatabase.h
 CMakeFiles/semestralka.dir/CHumanPlayer.cpp.obj
+ C:/CVUT FIT/PA2/semestralka/CBoard.h
  C:/CVUT FIT/PA2/semestralka/CCard.h
  C:/CVUT FIT/PA2/semestralka/CCardStack.h
  C:/CVUT FIT/PA2/semestralka/CHumanPlayer.cpp
  C:/CVUT FIT/PA2/semestralka/CHumanPlayer.h
  C:/CVUT FIT/PA2/semestralka/CPlayer.h
+ C:/CVUT FIT/PA2/semestralka/CWindow.h
  C:/CVUT FIT/PA2/semestralka/CardDatabase.h
 CMakeFiles/semestralka.dir/CMainMenu.cpp.obj
  C:/CVUT FIT/PA2/semestralka/CMainMenu.cpp
  C:/CVUT FIT/PA2/semestralka/CMainMenu.h
  C:/CVUT FIT/PA2/semestralka/CWindow.h
 CMakeFiles/semestralka.dir/CMinion.cpp.obj
+ C:/CVUT FIT/PA2/semestralka/CBoard.h
  C:/CVUT FIT/PA2/semestralka/CCard.h
+ C:/CVUT FIT/PA2/semestralka/CCardStack.h
  C:/CVUT FIT/PA2/semestralka/CMinion.cpp
  C:/CVUT FIT/PA2/semestralka/CMinion.h
+ C:/CVUT FIT/PA2/semestralka/CPlayer.h
+ C:/CVUT FIT/PA2/semestralka/CWindow.h
+ C:/CVUT FIT/PA2/semestralka/CardDatabase.h
 CMakeFiles/semestralka.dir/CPauseMenu.cpp.obj
  C:/CVUT FIT/PA2/semestralka/CPauseMenu.cpp
  C:/CVUT FIT/PA2/semestralka/CPauseMenu.h
  C:/CVUT FIT/PA2/semestralka/CWindow.h
 CMakeFiles/semestralka.dir/CPlayer.cpp.obj
+ C:/CVUT FIT/PA2/semestralka/CBoard.h
  C:/CVUT FIT/PA2/semestralka/CCard.h
  C:/CVUT FIT/PA2/semestralka/CCardStack.h
  C:/CVUT FIT/PA2/semestralka/CPlayer.cpp
  C:/CVUT FIT/PA2/semestralka/CPlayer.h
+ C:/CVUT FIT/PA2/semestralka/CWindow.h
  C:/CVUT FIT/PA2/semestralka/CardDatabase.h
 CMakeFiles/semestralka.dir/CSpell.cpp.obj
  C:/CVUT FIT/PA2/semestralka/CCard.h
+ C:/CVUT FIT/PA2/semestralka/CMinion.h
  C:/CVUT FIT/PA2/semestralka/CSpell.cpp
  C:/CVUT FIT/PA2/semestralka/CSpell.h
 CMakeFiles/semestralka.dir/CWindow.cpp.obj
@@ -67,8 +101,15 @@ CMakeFiles/semestralka.dir/CardDatabase.cpp.obj
  C:/CVUT FIT/PA2/semestralka/CardDatabase.cpp
  C:/CVUT FIT/PA2/semestralka/CardDatabase.h
 CMakeFiles/semestralka.dir/main.cpp.obj
+ C:/CVUT FIT/PA2/semestralka/CAIPlayer.h
+ C:/CVUT FIT/PA2/semestralka/CBoard.h
  C:/CVUT FIT/PA2/semestralka/CCard.h
+ C:/CVUT FIT/PA2/semestralka/CCardStack.h
  C:/CVUT FIT/PA2/semestralka/CGame.h
+ C:/CVUT FIT/PA2/semestralka/CHumanPlayer.h
+ C:/CVUT FIT/PA2/semestralka/CMainMenu.h
+ C:/CVUT FIT/PA2/semestralka/CPauseMenu.h
+ C:/CVUT FIT/PA2/semestralka/CPlayer.h
  C:/CVUT FIT/PA2/semestralka/CWindow.h
  C:/CVUT FIT/PA2/semestralka/CardDatabase.h
  C:/CVUT FIT/PA2/semestralka/main.cpp

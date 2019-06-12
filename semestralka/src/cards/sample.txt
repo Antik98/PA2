@@ -1,0 +1,28 @@
+id:{
+	isSpell:
+	name:
+	description:
+	manaRequired:
+	dmg:
+	hp:
+}
+
+**Minion example:
+id:			1 {
+isSpell:		0
+name:			BlackWizard
+desc:			A wizard from the dimension of oz
+mana:			3
+dmg:			4
+hp:				4
+			}
+
+**Spell example:
+id:			2 {
+isSpell:		1
+name:			Well of Revival
+desc:			Adds 2 HP to chosen minion
+mana:			4
+add/take dmg:	2 (negative=takeHP, positive=AddHP)
+			}
+

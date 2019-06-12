@@ -16,6 +16,28 @@ iostream
 CPlayer.h
 C:/CVUT FIT/PA2/semestralka/CPlayer.h
 
+C:/CVUT FIT/PA2/semestralka/CBoard.cpp
+limits
+-
+ctime
+-
+CBoard.h
+C:/CVUT FIT/PA2/semestralka/CBoard.h
+CGame.h
+C:/CVUT FIT/PA2/semestralka/CGame.h
+
+C:/CVUT FIT/PA2/semestralka/CBoard.h
+iostream
+-
+CWindow.h
+C:/CVUT FIT/PA2/semestralka/CWindow.h
+
+C:/CVUT FIT/PA2/semestralka/CCard.cpp
+CCard.h
+C:/CVUT FIT/PA2/semestralka/CCard.h
+CPlayer.h
+C:/CVUT FIT/PA2/semestralka/CPlayer.h
+
 C:/CVUT FIT/PA2/semestralka/CCard.h
 iostream
 -
@@ -27,8 +49,16 @@ iostream
 -
 fstream
 -
+set
+-
+random
+-
+sstream
+-
 CCardStack.h
 C:/CVUT FIT/PA2/semestralka/CCardStack.h
+CMinion.h
+C:/CVUT FIT/PA2/semestralka/CMinion.h
 
 C:/CVUT FIT/PA2/semestralka/CCardStack.h
 iostream
@@ -39,22 +69,32 @@ CCard.h
 C:/CVUT FIT/PA2/semestralka/CCard.h
 CardDatabase.h
 C:/CVUT FIT/PA2/semestralka/CardDatabase.h
+CBoard.h
+C:/CVUT FIT/PA2/semestralka/CBoard.h
 
 C:/CVUT FIT/PA2/semestralka/CGame.cpp
+fstream
+-
+sstream
+-
 CGame.h
 C:/CVUT FIT/PA2/semestralka/CGame.h
-CMainMenu.h
-C:/CVUT FIT/PA2/semestralka/CMainMenu.h
-CPauseMenu.h
-C:/CVUT FIT/PA2/semestralka/CPauseMenu.h
 
 C:/CVUT FIT/PA2/semestralka/CGame.h
 vector
 -
-CWindow.h
-C:/CVUT FIT/PA2/semestralka/CWindow.h
 CardDatabase.h
 C:/CVUT FIT/PA2/semestralka/CardDatabase.h
+CMainMenu.h
+C:/CVUT FIT/PA2/semestralka/CMainMenu.h
+CPauseMenu.h
+C:/CVUT FIT/PA2/semestralka/CPauseMenu.h
+CBoard.h
+C:/CVUT FIT/PA2/semestralka/CBoard.h
+CHumanPlayer.h
+C:/CVUT FIT/PA2/semestralka/CHumanPlayer.h
+CAIPlayer.h
+C:/CVUT FIT/PA2/semestralka/CAIPlayer.h
 
 C:/CVUT FIT/PA2/semestralka/CHumanPlayer.cpp
 CHumanPlayer.h
@@ -69,6 +109,12 @@ C:/CVUT FIT/PA2/semestralka/CPlayer.h
 C:/CVUT FIT/PA2/semestralka/CMainMenu.h
 CWindow.h
 C:/CVUT FIT/PA2/semestralka/CWindow.h
+
+C:/CVUT FIT/PA2/semestralka/CMinion.cpp
+CMinion.h
+C:/CVUT FIT/PA2/semestralka/CMinion.h
+CPlayer.h
+C:/CVUT FIT/PA2/semestralka/CPlayer.h
 
 C:/CVUT FIT/PA2/semestralka/CMinion.h
 iostream
@@ -90,27 +136,7 @@ iostream
 CCardStack.h
 C:/CVUT FIT/PA2/semestralka/CCardStack.h
 
-C:/CVUT FIT/PA2/semestralka/CSpell.h
-iostream
--
-CCard.h
-C:/CVUT FIT/PA2/semestralka/CCard.h
-
 C:/CVUT FIT/PA2/semestralka/CWindow.h
-
-C:/CVUT FIT/PA2/semestralka/CardDatabase.cpp
-iostream
--
-fstream
--
-sstream
--
-CardDatabase.h
-C:/CVUT FIT/PA2/semestralka/CardDatabase.h
-CSpell.h
-C:/CVUT FIT/PA2/semestralka/CSpell.h
-CMinion.h
-C:/CVUT FIT/PA2/semestralka/CMinion.h
 
 C:/CVUT FIT/PA2/semestralka/CardDatabase.h
 iostream
