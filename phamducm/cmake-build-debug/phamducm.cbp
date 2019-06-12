@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="phamducm"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/CVUT FIT/PA2/phamducm/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="phamducm">
+				<Option output="C:/CVUT FIT/PA2/phamducm/cmake-build-debug/phamducm.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/CVUT FIT/PA2/phamducm/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/CVUT FIT/PA2/phamducm/semestralka/src"/>
+					<Add directory="C:/CVUT FIT/PA2/phamducm/src"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 phamducm"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="phamducm/fast">
+				<Option output="C:/CVUT FIT/PA2/phamducm/cmake-build-debug/phamducm.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/CVUT FIT/PA2/phamducm/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/CVUT FIT/PA2/phamducm/semestralka/src"/>
+					<Add directory="C:/CVUT FIT/PA2/phamducm/src"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 phamducm/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/CVUT FIT/PA2/phamducm/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/CVUT FIT/PA2/phamducm/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/CVUT FIT/PA2/phamducm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CAIPlayer.cpp">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CAIPlayer.h">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CBoard.cpp">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CBoard.h">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CCard.cpp">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CCard.h">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CCardStack.cpp">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CCardStack.h">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CGame.cpp">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CGame.h">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CHumanPlayer.cpp">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CHumanPlayer.h">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CMainMenu.cpp">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CMainMenu.h">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CMinion.cpp">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CMinion.h">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CPauseMenu.cpp">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CPauseMenu.h">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CPlayer.cpp">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CPlayer.h">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CSpell.cpp">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CSpell.h">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CWindow.cpp">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CWindow.h">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CardDatabase.cpp">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/CardDatabase.h">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/src/main.cpp">
+			<Option target="phamducm"/>
+		</Unit>
+		<Unit filename="C:/CVUT FIT/PA2/phamducm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,288 @@
+0 {
+	0
+	Progtest Berserker
+	Destroys every progtest
+	2
+	1
+	3
+}
+
+1 {
+	0
+	Stasis Dragon
+	A dragon that is very lazy.
+	6
+	6
+	6
+}
+
+2 {
+	1
+	Chronoshot
+	A damage spell that deals 3 dmg
+	3
+	-3
+}
+
+3 {
+	1
+	Healing Well
+	A healing spell that heals 2 HP
+	4
+	2
+}
+
+4 {
+	0
+	Abominable Bowman
+	A big Bowman
+	7
+	6
+	7
+}
+
+5 {
+	0
+	Aberrant Berserker
+	Gets pretty mad pretty often, pretty
+	4
+	3
+	5
+}
+
+6 {
+	0
+	Abomination
+	Very abominable creature
+	5
+	4
+	4
+}
+
+7 {
+	0
+	Abusive Sergeant
+	Not many people like this man
+	1
+	1
+	1
+}
+
+8 {
+	0
+	Abyssal Enforcer
+	Abysmal as one can be
+	7
+	6
+	6
+}
+
+9 {
+	0
+	Acherus Veteran
+	A scary elf full of vengance
+	1
+	2
+	1
+}
+
+10 {
+	0
+	Acidic Swamp Ooze
+	Has many things stuck inside of it, is that my sock?!!
+	2
+	3
+	2
+}
+
+11 {
+	0
+	Danny Widget
+	Fearful and dedicated
+	4
+	5
+	5
+}
+
+12 {
+	0
+	Acidmaw
+	Uses powerful venom to attack
+	5
+	4
+	2
+}
+
+13 {
+	0
+	Acolyte of Agony
+	Scary being
+	3
+	3
+	3
+}
+
+14 {
+	0
+	Acolyte of Pain
+	Proud creature
+	3
+	1
+	3
+}
+
+15 {
+	0
+	Acornbearer
+	Uses acorns to conjour magic
+	1
+	2
+	1
+}
+
+16 {
+	0
+	Air Elemental
+	Not sure if it is even alive
+	1
+	2
+	1
+}
+
+17 {
+	0
+	Akali the Rhino
+	It is massive
+	1
+	2
+	1
+}
+
+18 {
+	0
+	Wind Lord
+	A very arogant creature
+	8
+	5
+	9
+}
+
+19 {
+	0
+	Alexstraza
+	Fearful Dragon
+	9
+	8
+	8
+}
+
+20 {
+	0
+	Aldor Peacekeeper
+	Does his best to help everyone out
+	3
+	3
+	3
+}
+
+21 {
+	0
+	Amani Berserker
+	Is always mad
+	2
+	2
+	3
+}
+
+22 {
+	0
+	Ancient Brewmaster
+	A panda wearing priests armor
+	4
+	5
+	4
+}
+
+23 {
+	0
+	Ancient of Lore
+	A massive tree. Why is it moving?
+	7
+	5
+	5
+}
+
+24 {
+	0
+	Ancient Shieldbearer
+	Looks a lot like Captain America
+	7
+	6
+	6
+}
+
+25 {
+	0
+	Barbarian
+	The simplest of troops
+	1
+	1
+	1
+}
+
+26 {
+	1
+	Spell of revival
+	Gives a given minion or player +5HP
+	8
+	5
+}
+
+27 {
+	0
+	Kraken
+	A legendary creature from Atlantis
+	10
+	10
+	10
+}
+
+28 {
+	1
+	Massive Fireball
+	Cast a Massive fireball at a minion/player taking 6HP
+	8
+	6
+}
+
+29 {
+	1
+	Fireball
+	Cast a reasonable fireall at a minion/player taking 3HP
+	5
+	3
+}
+
+30 {
+	1
+	Throwing Stone
+	You grab a stone and throw it at a minion/player taking 1HP
+	1
+	1
+}
+
+31 {
+	1
+	Apple
+	You find an apple on the ground, it restores 2HP to whom you throw it at
+	1
+	2
+}
+
+32 {
+	1
+	Divine Health Spell
+	Cast a Health spell at a minion/player it gives them 8HP
+	10
+	8
+}

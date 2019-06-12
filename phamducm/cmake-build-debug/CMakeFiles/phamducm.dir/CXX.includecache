@@ -1,0 +1,94 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/CVUT FIT/PA2/phamducm/src/CAIPlayer.h
+iostream
+-
+CPlayer.h
+C:/CVUT FIT/PA2/phamducm/src/CPlayer.h
+
+C:/CVUT FIT/PA2/phamducm/src/CBoard.h
+iostream
+-
+CWindow.h
+C:/CVUT FIT/PA2/phamducm/src/CWindow.h
+
+C:/CVUT FIT/PA2/phamducm/src/CCard.h
+iostream
+-
+string
+-
+
+C:/CVUT FIT/PA2/phamducm/src/CCardStack.h
+iostream
+-
+vector
+-
+CCard.h
+C:/CVUT FIT/PA2/phamducm/src/CCard.h
+CardDatabase.h
+C:/CVUT FIT/PA2/phamducm/src/CardDatabase.h
+CBoard.h
+C:/CVUT FIT/PA2/phamducm/src/CBoard.h
+
+C:/CVUT FIT/PA2/phamducm/src/CGame.cpp
+fstream
+-
+sstream
+-
+climits
+-
+CGame.h
+C:/CVUT FIT/PA2/phamducm/src/CGame.h
+
+C:/CVUT FIT/PA2/phamducm/src/CGame.h
+vector
+-
+CardDatabase.h
+C:/CVUT FIT/PA2/phamducm/src/CardDatabase.h
+CMainMenu.h
+C:/CVUT FIT/PA2/phamducm/src/CMainMenu.h
+CPauseMenu.h
+C:/CVUT FIT/PA2/phamducm/src/CPauseMenu.h
+CBoard.h
+C:/CVUT FIT/PA2/phamducm/src/CBoard.h
+CHumanPlayer.h
+C:/CVUT FIT/PA2/phamducm/src/CHumanPlayer.h
+CAIPlayer.h
+C:/CVUT FIT/PA2/phamducm/src/CAIPlayer.h
+
+C:/CVUT FIT/PA2/phamducm/src/CHumanPlayer.h
+iostream
+-
+CPlayer.h
+C:/CVUT FIT/PA2/phamducm/src/CPlayer.h
+
+C:/CVUT FIT/PA2/phamducm/src/CMainMenu.h
+CWindow.h
+C:/CVUT FIT/PA2/phamducm/src/CWindow.h
+
+C:/CVUT FIT/PA2/phamducm/src/CPauseMenu.h
+CWindow.h
+C:/CVUT FIT/PA2/phamducm/src/CWindow.h
+
+C:/CVUT FIT/PA2/phamducm/src/CPlayer.h
+iostream
+-
+CCardStack.h
+C:/CVUT FIT/PA2/phamducm/src/CCardStack.h
+
+C:/CVUT FIT/PA2/phamducm/src/CWindow.h
+
+C:/CVUT FIT/PA2/phamducm/src/CardDatabase.h
+iostream
+-
+vector
+-
+CCard.h
+C:/CVUT FIT/PA2/phamducm/src/CCard.h
+

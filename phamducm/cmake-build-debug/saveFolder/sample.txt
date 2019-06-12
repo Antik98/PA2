@@ -1,0 +1,10 @@
+1											isAIGame
+1											activePlayerIndex
+20 10										HPP1, ManaP1
+4 23 12 30									handCardsP1
+12 12 11 21 23 23 4 6 25 16 27 23 9 14		deckCardsP1
+3:3											boardCardsP1
+30 11										HPP2, ManaP2
+6 34 8 19 15								handCardsP2
+16 18 10 0 4 5 18 38 37 34 35 32 33 2       deckCardsP2
+4:3 6:4										boardCardsP2

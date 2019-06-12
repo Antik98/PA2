@@ -1,0 +1,24 @@
+Naprogramujte engine pro hraní karetního RPG
+
+Váš engine:
+
+ze souboru nahraje definici karet (jejich typ, atributy, efekty), balíčku (seznam karet v balíčku)
+umožní vytvořit a hrát samotnou karetní hru
+implementuje variantu pro jednoho hráče proti počítači (náhodné tahy nestačí)
+implementuje variantu pro dva hráče (výměna přes potvrzovací okno, aby soupeř neviděl karty, nebo naopak soupeři si celou dobu do karet vidí)
+umožňuje ukládat a načítat rozehrané hry
+Kde lze využít polymorfismus? (doporučené)
+
+Typy karet: útočné, obranné, speciální, ...
+Efekty akcí: síla útoku, síla obrany, vem si X karet, zahoď X karet
+Ovládání hráče: lokální hráč, umělá inteligence (různé druhy), síťový hráč
+Uživatelské rozhraní: konzole, ncurses, SDL, OpenGL (různé varianty), ...
+Ukázky:
+
+https://cs.wikipedia.org/wiki/Bang!_(hra)
+http://www.bang.cz/cs/karty/40-bang/65-bang-zakladni-balicek.html
+https://cs.wikipedia.org/wiki/Magic:_The_Gathering
+https://cs.wikipedia.org/wiki/Hearthstone:_Heroes_of_Warcraft
+http://www.stare-hry.cz/hry/strategie/mravenci/
+https://play.google.com/store/apps/details?id=com.qetrix.mravenci&hl=cs
+http://jadropudla.cz/hitstick/
