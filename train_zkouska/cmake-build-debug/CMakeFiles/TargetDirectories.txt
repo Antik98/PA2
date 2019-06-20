@@ -1,0 +1,3 @@
+C:/CVUT FIT/PA2/train_zkouska/cmake-build-debug/CMakeFiles/train_zkouska.dir
+C:/CVUT FIT/PA2/train_zkouska/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/CVUT FIT/PA2/train_zkouska/cmake-build-debug/CMakeFiles/rebuild_cache.dir

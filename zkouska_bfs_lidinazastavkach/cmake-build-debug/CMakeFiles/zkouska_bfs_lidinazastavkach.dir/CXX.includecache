@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/CVUT FIT/PA2/zkouska_bfs_lidinazastavkach/main.cpp
+iostream
+-
+map
+-
+set
+-
+cassert
+-
+queue
+-
+sstream
+-
+

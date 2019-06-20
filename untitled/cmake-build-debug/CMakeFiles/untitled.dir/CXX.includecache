@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/CVUT FIT/PA2/untitled/main.cpp
+sstream
+-
+string
+-
+algorithm
+-
+map
+-
+set
+-
+list
+-
+deque
+-
+queue
+-
+stack
+-
+cassert
+-
+

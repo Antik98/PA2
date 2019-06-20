@@ -1,0 +1,3 @@
+C:/CVUT FIT/PA2/zkouska_bfs_lidinazastavkach2/cmake-build-debug/CMakeFiles/zkouska_bfs_lidinazastavkach.dir
+C:/CVUT FIT/PA2/zkouska_bfs_lidinazastavkach2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/CVUT FIT/PA2/zkouska_bfs_lidinazastavkach2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

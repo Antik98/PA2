@@ -1,0 +1,4 @@
+"C:\Users\David Pham\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\191.7479.33\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\CVUT FIT\PA2\zkouska_bfs_lidinazastavkach"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/CVUT FIT/PA2/zkouska_bfs_lidinazastavkach/cmake-build-debug
